@@ -6,6 +6,8 @@ A collaborative kitchen game.
   - [Design](#design)
   - [Browse Code](#browse-code)
   - [Contributing](#contributing)
+    - [Standards](#standards)
+    - [Feature Development](#feature-development)
     - [Branch Naming](#branch-naming)
 
 ## Design
@@ -20,6 +22,12 @@ A collaborative kitchen game.
 ## Contributing
 
 Pull requests are welcome. All changes must be committed to a development brach and a pull request made to merge into `main`. Documentation should be updated as part of the pull request. All code should be tested as far as it possible (it is difficult to unit test all code in a game).
+
+### Standards
+
+**Code is for people**. It is expected that all code be self documenting and fully tested (to the extent possible). Features and concepts etc... should be fully documented by updating the functional or technical documentation respectively.
+
+### Feature Development
 
 It is recommended that all new features are first prototyped in their own test branch. Here you can focus on getting the feature and algorithms etc... correct. When you are confident that feature is ready, please develop the feature with in a development branch with focus on code correctness, testing and documentation.
 
