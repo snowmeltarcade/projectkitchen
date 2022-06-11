@@ -12,6 +12,7 @@ A collaborative kitchen game.
     - [Feature Development](#feature-development)
     - [Branch Types](#branch-types)
     - [Associated Repositories](#associated-repositories)
+  - [License](#license)
 
 ## Design
 
@@ -40,7 +41,7 @@ This project will build on Windows, Mac and Linux. The following software is req
 
 * [Git](https://git-scm.com/)
 * [Python 3.7](https://www.python.org/) or above
-* [Unity3D](https://unity.com/) - we keep up with the latest version
+* [Unity3D 2021.3.4f1 LTS](https://unity3d.com/unity/whats-new/2021.3.4)
 
 ## Contributing
 
@@ -70,3 +71,7 @@ There are two associated repositories to be aware of:
   * This contains production assets used by the game. It is linked as a submodule within the unity 3d project.
 * [projectkitchen-assets-dev](https://github.com/snowmeltarcade/projectkitchen-assets-dev)
   * This contains the development files used to create the production assets.
+ 
+## License
+
+![License](https://img.shields.io/github/license/snowmeltarcade/projectkitchen?style=plastic)
