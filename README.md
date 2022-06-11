@@ -11,6 +11,7 @@ A collaborative kitchen game.
     - [Standards](#standards)
     - [Feature Development](#feature-development)
     - [Branch Types](#branch-types)
+    - [Associated Repositories](#associated-repositories)
 
 ## Design
 
@@ -58,3 +59,12 @@ The main development branch is called `main`. No code is to be directly committe
 Development branches contain active development on a feature of some kind. They should have meaningful names that describe their purpose. Their live times should be kept as short as is reasonable. Try and keep development branches specific to a feature. Merge/rebase often with `main` to keep merge conflicts at a minimum. When merging with `main`, please squash all commits. The branch should be deleted after a successful merge.
 
 Prototype/test branches contain test or prototyping code used to experiment with new features. They should have meaningful names describing what the branch is testing or prototyping. They should be prefixed with `test-`. They have no fixed live time and can be used as a reference for development branches as long as they are needed. These branches should not be merged with `main`.
+
+### Associated Repositories
+
+There are two associated repositories to be aware of:
+
+* [projectkitchen-assets](https://github.com/snowmeltarcade/projectkitchen-assets)
+  * This contains production assets used by the game. It is linked as a submodule within the unity 3d project.
+* [projectkitchen-assets-dev](https://github.com/snowmeltarcade/projectkitchen-assets-dev)
+  * This contains the development files used to create the production assets.
