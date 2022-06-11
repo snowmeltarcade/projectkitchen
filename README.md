@@ -5,6 +5,8 @@ A collaborative kitchen game.
 - [Project Kitchen](#project-kitchen)
   - [Design](#design)
   - [Browse Code](#browse-code)
+  - [Getting Started](#getting-started)
+    - [Software Requirements](#software-requirements)
   - [Contributing](#contributing)
     - [Standards](#standards)
     - [Feature Development](#feature-development)
@@ -18,6 +20,24 @@ A collaborative kitchen game.
 ## Browse Code
 
 [![Preview in Visual Studio Code](https://img.shields.io/badge/preview%20in-vscode.dev-blue)](https://open.vscode.dev/snowmeltarcade/projectkitchen)
+
+## Getting Started
+
+Follow these steps to get started with this project.
+
+```bash
+git clone https://github.com/snowmeltarcade/projectkitchen.git
+git submodule update --init --recursive
+python3 build.py
+```
+
+### Software Requirements
+
+This project will build on Windows, Mac and Linux. The following software is required in order to build:
+
+* [Git](https://git-scm.com/)
+* [Python 3.7](https://www.python.org/) or above
+* [Unity3D](https://unity.com/) - we keep up with the latest version
 
 ## Contributing
 
