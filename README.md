@@ -46,7 +46,7 @@ Pull requests are welcome. All changes must be committed to a separate brach and
 
 ### Standards
 
-**Code is for people**. It is expected that all code be self documenting and fully tested (to the extent possible). Features and concepts etc... should be fully documented by updating the functional or technical documentation respectively.
+See [here](https://github.com/snowmeltarcade/coding-standards) for the expected coding standards.
 
 ### Feature Development
 
