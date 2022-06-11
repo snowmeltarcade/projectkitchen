@@ -28,7 +28,9 @@ Follow these steps to get started with this project.
 
 ```bash
 git clone https://github.com/snowmeltarcade/projectkitchen.git
+cd ./projectkitchen
 git submodule update --init --recursive
+cd ./src
 python3 build.py
 ```
 
