@@ -71,7 +71,9 @@ There are two associated repositories to be aware of:
   * This contains production assets used by the game. It is linked as a submodule within the unity 3d project.
 * [projectkitchen-assets-dev](https://github.com/snowmeltarcade/projectkitchen-assets-dev)
   * This contains the development files used to create the production assets.
- 
+* [projectkitchendocumentation](https://github.com/snowmeltarcade/projectkitchendocumentation)
+  * This contains the generated documentation for this project.
+
 ## License
 
 ![License](https://img.shields.io/github/license/snowmeltarcade/projectkitchen?style=plastic)
