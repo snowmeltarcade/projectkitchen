@@ -3,3 +3,8 @@
 The design and functional features of this project.
 
 - [Abstract](abstract.md)
+- [Food Preparation](food_preparation.md)
+- [Game Play Examples](game_play_examples.md)
+- [Ingredients](ingredients.md)
+- [Kitchens](kitchens.md)
+- [Recipes](recipes.md)
