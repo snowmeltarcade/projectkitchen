@@ -13,19 +13,19 @@ Having fun is the main game play objective. Game rules and logic should be simpl
 
 ## Goals
 
-Working as a group, gather ingredients, process and plate them according to set menus within a set time limit.
+Working as a group; gather ingredients and process and plate them according to set recipes within a set time limit.
 
 ## Style
 
-Game sessions are easy to setup and simple to play. Game sessions should not be overly long in length or require much cognitive load. Fun is based on cooperation and group play. Challenge is based on inter-group communication, specific goals and time limits.
+Game sessions are easy to setup and simple to play. Game sessions should not be overly long in length or require much cognitive load. Fun is based on cooperation and group play. Challenge is based on inter-group communication, specific recipes to create and time limits.
 
 ## Target Audience
 
 * A group with a minimum of 2 players and a maximum of 16 players
-* Families and friends with players aged 5 years to 40 years of age
+* Groups of people between 5 and 40 years of age
 * Low technical skill required
 * No real life cooking experience required
-* Basic computer game experience
+* Basic computer game experience beneficial
 * Willing to communicate and cooperate with others
 
 ## Flow
@@ -36,11 +36,11 @@ The basic game flow is as follows:
 
 ## Game Modes
 
-There are two main game modes, [Career Mode](career_mode.md) and [Free Play](free_play.md).
+There are two main game modes, [career mode](career_mode.md) and [free play](free_play.md).
 
 ## Cooking Levels
 
-Cooking and preparing ingredients are the main aspect of this game. A typical game level has the following flow:
+A typical game level has the following flow:
 
 ![Cooking Level Flow](images/cooking_level_flow.drawio.png)
 
