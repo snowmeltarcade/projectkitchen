@@ -42,6 +42,6 @@ In addition to the above stations, this includes:
 
 ## Resturant
 
-This is defined by fine-grained control of the hot stations. Using the hot station will no longer work like a timed appliance, but it will require a continuous interaction from the player to keep the heat active for a certain amount of time. The time required will vary based on customer preference. Some like their meat cooked "rare" others like it cooked "well done".
+This is defined by fine-grained control of the hot stations. Using the hot station will no longer work like a timed appliance, but it will require a timed interaction from the player to keep the heat active for a certain amount of time. The time required will vary based on customer preference. Some like their meat cooked "rare" others like it cooked "well done". Additionally, the amount of heat can vary. Some items my also require continuous interaction, like continuous stiring while cooking.
 
 There are no additional stations for this type of kitchen.
