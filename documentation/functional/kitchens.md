@@ -1,13 +1,15 @@
 # Kitchens
 
-There are 5 different styles of kitchens:
- * [Farmers market](#farmers-market)
- * [Festival food](#festival-food), e.g. food truck, county fair
- * [Fast food](#fast-food)
- * [Diner](#diner)
- * [Restaurant](#restaurant)
+Kitchens differ in the types of workstations they would have. Each player would be designated a different workstation. If there are insufficient players, then individual players will have to move from workstation to workstation.
 
-These types of kitchens differ in the types of workstations they would have. Each player would be designated a different workstation. If there are insufficient players, then individual players will have to move from workstation to workstation.
+Players can select which workstations a kitchen will have from a provided selection. Each kitchen though must have at least two types of [workstation](workstations.md): an ingredient store and a serving area.
+
+- [Kitchens](#kitchens)
+  - [Farmers market](#farmers-market)
+  - [Festival food](#festival-food)
+  - [Fast food](#fast-food)
+  - [Diner](#diner)
+  - [Restaurant](#restaurant)
 
 ## Farmers market
 

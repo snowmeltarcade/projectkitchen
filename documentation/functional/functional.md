@@ -9,4 +9,5 @@ The design and functional features of this project.
 - [Graphics](graphics.md)
 - [Ingredients](ingredients.md)
 - [Kitchens](kitchens.md)
+  - [Workstations](workstations.md)
 - [Recipes](recipes.md)
