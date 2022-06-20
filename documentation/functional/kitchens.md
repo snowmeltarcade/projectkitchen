@@ -1,13 +1,13 @@
 # Kitchens
 
 There are 5 different styles of kitchens:
- * Farmers market
- * Festival food, e.g. food truck, county fair
- * Fast food
- * Diner
- * Resturant
+ * [Farmers market](#farmers-market)
+ * [Festival food](#festival-food), e.g. food truck, county fair
+ * [Fast food](#fast-food)
+ * [Diner](#diner)
+ * [Restaurant](#restaurant)
 
-These types of kitchens differ in the types of stations that they would have. For multi-player, each player would be designated a different station; if there are indufficient players, then individual players will have to move from station to station.
+These types of kitchens differ in the types of stations that they would have. For multi-player, each player would be designated a different station; if there are insufficient players, then individual players will have to move from station to station.
 
 ## Farmers market
 
@@ -18,7 +18,7 @@ This is defined by having products that need to, at most, cut, and then packaged
 
 ## Festival food
 
-This is defined by having a few simple recipes that never vary, but which may require frying, boiling, grilling, or other steps, in addition to potenatially cutting. Thus, ingredients may require 2 preperation steps, e.g. cutting potatoes and then frying them. It would be expected that as the kitchen becomes more complex it may have both a fry station and a grill station, and higher levels of difficulty would include boiling and more. Still, each ingredient will be capped at two preparation steps and the recipes will not vary, i.e. there is only one type of burger or grilled sandwich made by the restuant. This menu simplicity promotes allowing the player to become accustomed to how to make a recipe without worrying about variances.
+This is defined by having a few simple recipes that never vary, but which may require frying, boiling, grilling, or other steps, in addition to potentially cutting. Thus, ingredients may require 2 preparation steps, e.g. cutting potatoes and then frying them. It would be expected that as the kitchen becomes more complex it may have both a fry station and a grill station, and higher levels of difficulty would include boiling and more. Still, each ingredient will be capped at two preparation steps and the recipes will not vary, i.e. there is only one type of burger or grilled sandwich made by the restaurant. This menu simplicity promotes allowing the player to become accustomed to how to make a recipe without worrying about variances.
 
 In addition to the above stations, this includes:
 
@@ -26,7 +26,7 @@ In addition to the above stations, this includes:
 
 ## Fast food
 
-This is defined by having menu items that allow for simple variances. Like [festival food](kitchens.md#festival-food), each item will only need up to 2 preparation steps. The difference here is that a recipe may have customer preference differences. A customer may or may not want pickles on their burger. This difference requires a chef to learn to better read an order. The complexity comes from the fact that the customer may or may not eat the food. If they don't eat the food, you won't get credit for making it, if they eat it, they will give a poor rating to the resturant for serving the wrong thing.
+This is defined by having menu items that allow for simple variances. Like [festival food](kitchens.md#festival-food), each item will only need up to 2 preparation steps. The difference here is that a recipe may have customer preference differences. A customer may or may not want pickles on their burger. This difference requires a chef to learn to better read an order. The complexity comes from the fact that the customer may or may not eat the food. If they don't eat the food, you won't get credit for making it, if they eat it, they will give a poor rating to the restaurant for serving the wrong thing.
 
 In addition to the above stations, this includes:
 
@@ -40,8 +40,8 @@ In addition to the above stations, this includes:
 
  5. Dish station
 
-## Resturant
+## Restaurant
 
-This is defined by fine-grained control of the hot stations. Using the hot station will no longer work like a timed appliance, but it will require a timed interaction from the player to keep the heat active for a certain amount of time. The time required will vary based on customer preference. Some like their meat cooked "rare" others like it cooked "well done". Additionally, the amount of heat can vary. Some items my also require continuous interaction, like continuous stiring while cooking.
+This is defined by fine-grained control of the hot stations. Using the hot station will no longer work like a timed appliance, but it will require a timed interaction from the player to keep the heat active for a certain amount of time. The time required will vary based on customer preference. Some like their meat cooked "rare" others like it cooked "well done". Additionally, the amount of heat can vary. Some items my also require continuous interaction, like continuous stirring while cooking.
 
 There are no additional stations for this type of kitchen.
