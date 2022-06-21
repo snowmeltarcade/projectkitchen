@@ -10,8 +10,8 @@ The design and functional features of this project.
 - [Game Play Examples](game_play_examples.md)
 - [Graphics](graphics.md)
 - [Ingredients](ingredients.md)
-- [Kitchen Items](kitchen_items.md)
 - [Kitchens](kitchens.md)
+  - [Kitchen Items](kitchen_items.md)
   - [Workstations](workstations.md)
 - [Recipes](recipes.md)
 - Screens
