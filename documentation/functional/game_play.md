@@ -9,7 +9,6 @@ Having fun is the main game play objective. Game rules and logic should be simpl
   - [Flow](#flow)
   - [Game Modes](#game-modes)
   - [Cooking Levels](#cooking-levels)
-  - [World Map](#world-map)
 
 ## Goals
 
@@ -43,7 +42,3 @@ There are two main game modes, [career mode](career_mode.md) and [free play](fre
 A typical game level has the following flow:
 
 ![Cooking Level Flow](images/cooking_level_flow.drawio.png)
-
-## World Map
-
-The available career mode levels are display on this map. The lead player travels this map and selects the level to play.
