@@ -7,7 +7,6 @@ Having fun is the main game play objective. Game rules and logic should be simpl
   - [Style](#style)
   - [Target Audience](#target-audience)
   - [Flow](#flow)
-  - [Game Modes](#game-modes)
   - [Cooking Levels](#cooking-levels)
 
 ## Goals
@@ -31,11 +30,18 @@ Game sessions are easy to setup and simple to play. Game sessions should not be 
 
 The basic game flow is as follows:
 
-![Game Play Flow](images/game_play_flow.drawio.png)
-
-## Game Modes
-
-There are two main game modes, [career mode](career_mode.md) and [free play](free_play.md).
+```mermaid
+flowchart TB;
+    start_game([Start Game])-->select_game_mode{Start Server/<br/>Connect to Server};
+    select_game_mode--Server-->start_server[Start Server];
+    select_game_mode--Client-->connect_to_server[Connect to Server];
+    start_server-->configure_players[Configure and Connect Networked Players];
+    configure_players-->configure_level[Configure Level];
+    configure_level-->load_level[Load Level];
+    connect_to_server-->load_level;
+    load_level-->play_level[Play Level];
+    play_level-->select_game_mode;
+```
 
 ## Cooking Levels
 
