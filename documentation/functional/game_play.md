@@ -7,6 +7,7 @@ Having fun is the main game play objective. Game rules and logic should be simpl
   - [Style](#style)
   - [Target Audience](#target-audience)
   - [Game Flow](#game-flow)
+  - [Configuring Levels](#configuring-levels)
   - [Cooking Levels](#cooking-levels)
   - [Achievements](#achievements)
     - [Points](#points)
@@ -46,6 +47,10 @@ flowchart TB;
     play_level-->select_game_mode;
 ```
 
+## Configuring Levels
+
+Each [kitchen](kitchens.md) has a set layout with a slots for workstations to be placed. Before a level can be played, the lead player (the server) must fill these slots with the workstations they have access to. Every kitchen has a set of required workstations.
+
 ## Cooking Levels
 
 A typical game level has the following flow:
@@ -76,12 +81,12 @@ flowchart TB;
 
 ## Achievements
 
+For every level that is passed, the players involved are awarded points and stars. These can be used to purchase new workstations or upgrade existing [workstations](workstations.md).
+
 ### Points
 
 Points are awarded based on the time it takes to complete an order. The quicker an order is served, the more points awarded.
 
-All players involved in a level receive the same number of points. 
-
 ### Stars
 
-Each level has a minimum number of points required to count as a passed level. If the minimum number of points is not reached, the level is failed. Each level also has 3 stars that can be achieved. Each star also requires a set number of points. If the number of received points is greater than that required by a star, that star is awarded to all players involved in a level.
+Each level has a minimum number of points required to count as a passed level. If the minimum number of points is not reached, the level is failed. Each level also has 3 stars that can be achieved. Each star also requires a set number of points. If the number of received points is greater than that required by a star, that star is awarded.
