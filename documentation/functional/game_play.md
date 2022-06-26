@@ -8,6 +8,9 @@ Having fun is the main game play objective. Game rules and logic should be simpl
   - [Target Audience](#target-audience)
   - [Game Flow](#game-flow)
   - [Cooking Levels](#cooking-levels)
+  - [Achievements](#achievements)
+    - [Points](#points)
+    - [Stars](#stars)
 
 ## Goals
 
@@ -48,7 +51,7 @@ flowchart TB;
 A typical game level has the following flow:
 
 ```mermaid
-flowchart TD;
+flowchart TB;
     start_level([Start level])-->game_play_tips[Game play tips are displayed during level load];
     game_play_tips-->level_goals[Players informed of what recipes are expected and the minimum number of points to pass the level];
     level_goals-->assignments[Players assigned to a random workstation];
@@ -70,3 +73,15 @@ flowchart TD;
     game_play_stopped-->results_screen[Results screen displayed];
     results_screen-->exit_level([Exit level]);
 ```
+
+## Achievements
+
+### Points
+
+Points are awarded based on the time it takes to complete an order. The quicker an order is served, the more points awarded.
+
+All players involved in a level receive the same number of points. 
+
+### Stars
+
+Each level has a minimum number of points required to count as a passed level. If the minimum number of points is not reached, the level is failed. Each level also has 3 stars that can be achieved. Each star also requires a set number of points. If the number of received points is greater than that required by a star, that star is awarded to all players involved in a level.
