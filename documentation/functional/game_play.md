@@ -6,7 +6,7 @@ Having fun is the main game play objective. Game rules and logic should be simpl
   - [Goals](#goals)
   - [Style](#style)
   - [Target Audience](#target-audience)
-  - [Flow](#flow)
+  - [Game Flow](#game-flow)
   - [Cooking Levels](#cooking-levels)
 
 ## Goals
@@ -26,7 +26,7 @@ Game sessions are easy to setup and simple to play. Game sessions should not be 
 * Basic computer game experience beneficial
 * Willing to communicate and cooperate with others
 
-## Flow
+## Game Flow
 
 The basic game flow is as follows:
 
@@ -47,4 +47,26 @@ flowchart TB;
 
 A typical game level has the following flow:
 
-![Cooking Level Flow](images/cooking_level_flow.drawio.png)
+```mermaid
+flowchart TD;
+    start_level([Start level])-->game_play_tips[Game play tips are displayed during level load];
+    game_play_tips-->level_goals[Players informed of what recipes are expected and the minimum number of points to pass the level];
+    level_goals-->assignments[Players assigned to a random workstation];
+    assignments-->countdown[Countdown timer in seconds - 3, 2, 1];
+    countdown-->level_timer_begins[Level timer begins];
+    level_timer_begins-->orders_placed[Orders continually placed by restaurant customers];
+    orders_placed-->communication[Players communicate what ingredients they need];
+    communication-->pantry_ingredients[Player at pantry workstation to get ingredients and pass to other players];
+    pantry_ingredients-->passing_ingredients[Players pass ingredients to their left or right until the ingredients end up at the correct workstation];
+    passing_ingredients-->prepare_ingredients["Player at workstation prepares the ingredients at the workstation.<br/>(If no player is at the workstation, a player needs to move to that workstation.)"];
+    prepare_ingredients-->passing_prepared_ingredients[Players pass the prepared ingredients to their left or right until the ingredients end up at the plating workstation];
+    passing_prepared_ingredients-->plating_up[Player at plating up workstation puts prepared ingredients on a plate];
+    plating_up-->pass_plate_to_serving_area[When the plate has all the needed ingredients for an order,<br/>the player passes the plate to their left or right until the plate ends up at the serving area workstation];
+    pass_plate_to_serving_area-->serving_plate[Player places plate onto serving area];
+    serving_plate-->points_assigned[Points assigned to players based on how long the customers had to wait for the order];
+    points_assigned-->game_time_expired{Game Time Expired?};
+    game_time_expired--No-->orders_placed;
+    game_time_expired--Yes-->game_play_stopped[Game play stopped];
+    game_play_stopped-->results_screen[Results screen displayed];
+    results_screen-->exit_level([Exit level]);
+```
