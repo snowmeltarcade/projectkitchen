@@ -36,11 +36,12 @@ The basic game flow is as follows:
 
 ```mermaid
 flowchart TB;
-    start_game([Start Game])-->select_game_mode{Start Server/<br/>Connect to Server};
+    start_game([Start Game])-->select_game_mode{Single Player<br/>Start Server<br/>Connect to Server};
     select_game_mode--Server-->start_server[Start Server];
     select_game_mode--Client-->connect_to_server[Connect to Server];
     start_server-->configure_players[Configure and Connect Networked Players];
     configure_players-->configure_level[Configure Level];
+    select_game_mode--Single Player-->configure_level;
     configure_level-->load_level[Load Level];
     connect_to_server-->load_level;
     load_level-->play_level[Play Level];
