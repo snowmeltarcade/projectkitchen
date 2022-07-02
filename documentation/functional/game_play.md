@@ -24,7 +24,7 @@ Game sessions are easy to setup and simple to play. Game sessions should not be 
 ## Target Audience
 
 * A group with a minimum of 2 players and a maximum of 16 players
-* Groups of people between 5 and 40 years of age
+* Groups of people over 5 years of age
 * Low technical skill required
 * No real life cooking experience required
 * Basic computer game experience beneficial
