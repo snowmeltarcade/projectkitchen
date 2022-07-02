@@ -2,7 +2,7 @@
 
 Kitchens differ in the types of workstations they would have. Each player would be designated a different workstation. If there are insufficient players, then individual players will have to move from workstation to workstation.
 
-Players can select which workstations a kitchen will have from a provided selection. Each kitchen though must have at least two types of [workstation](workstations.md): an ingredient store and a serving area.
+Players can select which workstations a kitchen will have from a provided selection. Each kitchen must have at least three types of [workstation](workstations.md): an ingredient store, a prep station and a serving area.
 
 - [Kitchens](#kitchens)
   - [Farmers market](#farmers-market)
