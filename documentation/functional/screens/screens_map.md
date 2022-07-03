@@ -5,7 +5,7 @@ This is a map of all screen in the game with their connections:
 ```mermaid
 flowchart TD;
     splash_screens["<b>Splash Screens</b><br/>Fade in and out of the following logos.<br/>2 seconds each.<br/>Can tap to skip logo.<ol><li>Unity Logo (if we use the free engine)</li><li>Snow Melt Arcade Logo</li><li>The Chow Station Logo</li></ol>"]-->title_screen["<b>Title Screen</b><br/>Show game title and animated background.<br/>Player to tap/click to begin game.<br/>Menu background music starts."];
-    title_screen-->player_information_screen["<b>Player Information Screen</b><br/>Displays a textbox where the player can enter their game handle.<br/>The game handle cannot be blank.<br/>If it is, an error message is displayed.<br/>Also displays an avatar selection control.<br/>The following options are displayed:<ol><li>OK</li></ol>If this screen was entered by the `Options Screen`,<br/>the following options are also displayed:<ol><li>Back</li></ol>"];
+    title_screen-->player_information_screen["<b>Player Information Screen</b><br/>Displays a textbox where the player can enter their game handle.<br/>The game handle cannot be blank.<br/>If it is, an error message is displayed.<br/>Also displays an avatar selection control.<br/>The following options are displayed:<ol><li>OK</li></ol>"];
     player_information_screen-->main_menu_screen["<b>Main Menu Screen</b><br/>Shows game menu with the following options:<ol><li>Play</li><li>Options</li></ol>"];
     player_information_screen<-->options_screen["<b>Options Screen</b><br/>Shows the following game options:<ol><li>Music On/Off (Default on)</li><li>Sfx On/Off (Default on)</li><li>Update Player Information</li><li>Back</li></ol>"];
     options_screen<-->main_menu_screen;
