@@ -66,7 +66,7 @@ flowchart TB;
     level_timer_begins-->orders_placed[Orders continually placed by restaurant customers];
     orders_placed-->communication[Players communicate what ingredients they need];
     communication-->pantry_ingredients[Player at pantry workstation to get ingredients and pass to other players];
-    pantry_ingredients-->passing_ingredients[Players pass ingredients to their left or right until the ingredients end up at the correct workstation];
+    pantry_ingredients-->passing_ingredients[Players pass ingredients either up, down, left or right until the ingredients end up at the correct workstation];
     passing_ingredients-->prepare_ingredients["Player at workstation prepares the ingredients at the workstation.<br/>(If no player is at the workstation, a player needs to move to that workstation.)"];
     prepare_ingredients-->passing_prepared_ingredients[Players pass the prepared ingredients to their left or right until the ingredients end up at the plating workstation];
     passing_prepared_ingredients-->plating_up[Player at plating up workstation puts prepared ingredients on a plate];
