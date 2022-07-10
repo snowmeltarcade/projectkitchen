@@ -9,6 +9,7 @@ Having fun is the main game play objective. Game rules and logic should be simpl
   - [Game Flow](#game-flow)
   - [Configuring Levels](#configuring-levels)
   - [Cooking Levels](#cooking-levels)
+  - [Passing Ingredients](#passing-ingredients)
   - [Achievements](#achievements)
     - [Points](#points)
     - [Stars](#stars)
@@ -79,6 +80,16 @@ flowchart TB;
     game_play_stopped-->results_screen[Results screen displayed];
     results_screen-->exit_level([Exit level]);
 ```
+
+## Passing Ingredients
+
+The player has to pass ingredients either up, down, left or right to a different workstations. As workstations are positioned in a grid, the player must keep in mind where a workstation is in relation to their current workstation.
+
+The workstation closest to the direction of passing is selected as the destination workstation of an ingredient pass. See this diagram to see how this is done:
+
+![Workstation Selection](images/workstation_selection.drawio.png)
+
+In the case that two workstations are found of equal distance to the current workstation, the workstation is randomly selected from those workstations.
 
 ## Achievements
 
