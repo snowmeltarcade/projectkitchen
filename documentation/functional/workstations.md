@@ -2,6 +2,8 @@
 
 A workstation is a section in a [kitchen](kitchens.md) that performs a function. The locations of workstations in a kitchen is player defined. Players move between workstations to perform the functions offered by the workstation.
 
+All workstations take up one cell in the kitchen grid.
+
 - [Workstations](#workstations)
   - [Types](#types)
     - [Ingredient Store](#ingredient-store)
