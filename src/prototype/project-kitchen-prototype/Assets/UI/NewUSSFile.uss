@@ -1,0 +1,5 @@
+VisualElement {
+    opacity: 0.75;
+    font-size: 24px;
+    background-color: rgba(72, 202, 66, 255);
+}
