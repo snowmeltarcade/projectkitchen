@@ -83,9 +83,11 @@ flowchart TB;
 
 ## Passing Ingredients
 
-The player has to pass ingredients either up, down, left or right to a different workstations. As workstations are positioned in a grid, the player must keep in mind where a workstation is in relation to their current workstation.
+The player has to pass ingredients either up, down, left or right to a different workstations. As workstations are positioned in a grid, the player must keep in mind where a workstation is in relation to their current workstation. Workstations are positions directly next to each other, so there are no gaps between workstations.
 
-The workstation closest to the direction of passing is selected as the destination workstation of an ingredient pass. See this diagram to see how this is done:
+Not all sides of a workstation will have an adjacent workstation. If there is no workstation on the side an ingredient is passed, that ingredient falls to the floor and is lost.
+
+This is an example of how workstations may be positioned:
 
 ![Workstation Selection](images/workstation_selection.drawio.png)
 
