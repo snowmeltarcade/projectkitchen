@@ -9,6 +9,8 @@ Having fun is the main game play objective. Game rules and logic should be simpl
   - [Game Flow](#game-flow)
   - [Configuring Levels](#configuring-levels)
   - [Cooking Levels](#cooking-levels)
+    - [Moving Between Workstations](#moving-between-workstations)
+    - [Player Disconnections](#player-disconnections)
   - [Passing Ingredients](#passing-ingredients)
   - [Achievements](#achievements)
     - [Points](#points)
@@ -53,6 +55,8 @@ flowchart TB;
 
 Each [kitchen](kitchens.md) has a set layout with a slots for workstations to be placed. Before a level can be played, the lead player (the server) must fill these slots with the workstations they have access to. Every kitchen has a set of required workstations.
 
+After the kitchen has been layed out, each player must then select the workstation they will start at. This will be done using the workstation selection screen (also called the kitchen lobby screen).
+
 ## Cooking Levels
 
 A typical game level has the following flow:
@@ -69,9 +73,9 @@ flowchart TB;
     communication-->pantry_ingredients[Player at pantry workstation to get ingredients and pass to other players];
     pantry_ingredients-->passing_ingredients[Players pass ingredients either up, down, left or right until the ingredients end up at the correct workstation];
     passing_ingredients-->prepare_ingredients["Player at workstation prepares the ingredients at the workstation.<br/>(If no player is at the workstation, a player needs to move to that workstation.)"];
-    prepare_ingredients-->passing_prepared_ingredients[Players pass the prepared ingredients to their left or right until the ingredients end up at the plating workstation];
+    prepare_ingredients-->passing_prepared_ingredients["Players pass the prepared ingredients up, down left or right until the ingredients end up at the plating workstation"];
     passing_prepared_ingredients-->plating_up[Player at plating up workstation puts prepared ingredients on a plate];
-    plating_up-->pass_plate_to_serving_area[When the plate has all the needed ingredients for an order,<br/>the player passes the plate to their left or right until the plate ends up at the serving area workstation];
+    plating_up-->pass_plate_to_serving_area[When the plate has all the needed ingredients for an order,<br/>the player passes the plate to their up, down, left or right until the plate ends up at the serving area workstation];
     pass_plate_to_serving_area-->serving_plate[Player places plate onto serving area];
     serving_plate-->points_assigned[Points assigned to players based on how long the customers had to wait for the order];
     points_assigned-->game_time_expired{Game Time Expired?};
@@ -80,6 +84,14 @@ flowchart TB;
     game_play_stopped-->results_screen[Results screen displayed];
     results_screen-->exit_level([Exit level]);
 ```
+
+### Moving Between Workstations
+
+Players can move between workstations during game play. They will do this by using the same workstation selection screen used when they chose their initial workstations.
+
+### Player Disconnections
+
+If a player gets disconnected from game play (or the app stops running, due to being minimized/put into the background on a mobile device etc...), that player automatically gets removed from active game play. When that player reconnects (or the app starts running again), they will start out at the workstation selection screen.
 
 ## Passing Ingredients
 
