@@ -6,59 +6,83 @@ All workstations take up one cell in the kitchen grid.
 
 - [Workstations](#workstations)
   - [Types](#types)
-    - [Ingredient Store](#ingredient-store)
-      - [Food Box](#food-box)
+    - [Supply](#supply)
       - [Pantry](#pantry)
-    - [Serving Area](#serving-area)
-    - [Plate Cupboard](#plate-cupboard)
-    - [Chopping Board](#chopping-board)
-    - [Mixing Bowel](#mixing-bowel)
-    - [Frying Pan](#frying-pan)
+      - [Plate Cupboard](#plate-cupboard)
+    - [Mutation](#mutation)
+      - [Chopping Board](#chopping-board)
+      - [Mixing Bowel](#mixing-bowel)
+      - [Frying Pan](#frying-pan)
+    - [Finalization](#finalization)
+    - [Plating Station](#plating-station)
+    - [Serving Stations](#serving-stations)
 
 ## Types
 
-There are various types of workstation, each with a specific function. Types can have subtypes. Each type requires a specific [action](food_preparation.md).
+There are three main types of workstations:
 
-### Ingredient Store
+1. Supply
+2. Mutation
+3. Finalization
 
-Provides ingredients for players to use. Specific ingredient choices are provided based upon the menus to be created. Ingredients can be removed from the store at a set rate per n-unit of time. For instance, 1 potato every 5 seconds.
+Types can have subtypes. Each type requires a specific [action](food_preparation.md).
 
-Food preparation action: `tap`.
+### Supply
 
-#### Food Box
+Supplies a variety of items. These items could be ingredients, plates or something else.
 
-This is the basic level ingredient store. Its capacity is limited and refill rate slow.
+Getting items from a supply workstation is not rate limited by time, but item types are limited by capacity. Once items run out, a period of time is required for those items to be restocked. The restocking occurs automatically during a level, and instantly after a level is finished.
+
+As supply workstations are leveled up, their capacity increases and the restocking time decreases. Different items have different capacities and restocking times.
+
+Required action: `tap`.
 
 #### Pantry
 
-This is the higher level ingredient store. Its capacity is high and refill rate fast.
+Provides ingredients for players to use. Specific ingredient choices are provided based upon the menus to be created.
 
-### Serving Area
+#### Plate Cupboard
 
-Food and plates are passed here to be served to a customer.
+Plates are taken from here to prepare for food.
 
-Food preparation action: `tap`.
+### Mutation
 
-### Plate Cupboard
+Allows items to be changed from one type to another. This is a process that requires user action and/or a period of time. The specific number of actions and/or time required depends on the item being processed.
 
-Plates are taken from here to prepare for food. Plates can only be taken at a set rate per n-unit of time.
+Different workstations require different player actions.
 
-Food preparation action: `tap`.
+#### Chopping Board
 
-### Chopping Board
+Ingredients can be chopped here.
 
-Food can be chopped here.
+Required action: `swipe`.
 
-Food preparation action: `swipe`.
+#### Mixing Bowel
 
-### Mixing Bowel
+Ingredients can be mixed here.
 
-Food can be mixed here.
+Required action: `circle`.
 
-Food preparation action: `circle`.
+#### Frying Pan
 
-### Frying Pan
+Ingredients can be fried here.
 
-Food can be fried here.
+Required action: `circle`.
 
-Food preparation action: `circle`.
+### Finalization
+
+Items are placed here to be finalized - that is to be plated and served.
+
+Required action: `tap`.
+
+### Plating Station
+
+Ingredients are placed on a plate. What ingredients are allowed to be plated depends on what menu orders are active.
+
+A completed plate of food must be taken to a serving station.
+
+### Serving Stations
+
+Completed plates of food are taken here and are then delivered to customers. The player simply needs to place a plate here. The actual delivery to customers is automatic.
+
+Once a plate of food is delivered, that plate is automatically restocked in the plate cupboard.
