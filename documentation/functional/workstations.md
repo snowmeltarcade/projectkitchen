@@ -2,9 +2,8 @@
 
 A workstation is a section in a [kitchen](kitchens.md) that performs a function. The locations of workstations in a kitchen is player defined. Players move between workstations to perform the functions offered by the workstation.
 
-All workstations take up one cell in the kitchen grid.
-
 - [Workstations](#workstations)
+  - [Size](#size)
   - [Types](#types)
     - [Supply](#supply)
       - [Pantry](#pantry)
@@ -16,6 +15,14 @@ All workstations take up one cell in the kitchen grid.
     - [Finalization](#finalization)
       - [Plating Station](#plating-station)
       - [Serving Stations](#serving-stations)
+
+## Size
+
+All workstations take up one cell in the kitchen grid and have the same size.
+
+Items (ingredients, plates etc...) all have different sizes and cannot overlap. This means that the number of items a player stores on a workstation is limited.
+
+If a player passes an item to a workstation that has no space, this item is spoiled by falling on the floor. Players are made aware that a workstation has no space before they commit to passing to it, although there is no game mechanic to stop them from passing the item if they choose to do so. If a plate falls to the floor, it smashes and cannot be restocked during that level.
 
 ## Types
 
