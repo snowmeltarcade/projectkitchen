@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,6 +8,7 @@ public class UIController : MonoBehaviour
 {
     public UIDocument SplashScreens;
     public UIDocument TitleScreen;
+    public UIDocument PlayerInformationScreen;
 
     private List<UIDocument> Screens { get; set; } = new();
         
@@ -14,19 +16,18 @@ public class UIController : MonoBehaviour
     void Start()
     {
         this.Screens.Clear();
-        this.Screens.AddRange(new []{ this.SplashScreens, this.TitleScreen });
+        this.Screens.AddRange(new []
+        {
+            this.SplashScreens,
+            this.TitleScreen,
+            this.PlayerInformationScreen,
+        });
         
         this.HideAllScreens();
 
         this.SetDocumentVisibility(this.SplashScreens, true);
 
         this.StartCoroutine(this.ShowTitleScreen());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void HideAllScreens()
@@ -39,7 +40,7 @@ public class UIController : MonoBehaviour
 
     private void SetDocumentVisibility(UIDocument document, bool visible)
     {
-        document.enabled = visible;
+        document.rootVisualElement.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
     }
 
     private IEnumerator ShowTitleScreen()
@@ -49,5 +50,12 @@ public class UIController : MonoBehaviour
         this.HideAllScreens();
 
         this.SetDocumentVisibility(this.TitleScreen, true);
+    }
+
+    public void ShowPlayerInformationScreen()
+    {
+        this.HideAllScreens();
+
+        this.SetDocumentVisibility(this.PlayerInformationScreen, true);
     }
 }
