@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     public UIDocument SplashScreens;
     public UIDocument TitleScreen;
     public UIDocument PlayerInformationScreen;
+    public UIDocument MainMenuScreen;
 
     private List<UIDocument> Screens { get; set; } = new();
         
@@ -21,6 +22,7 @@ public class UIController : MonoBehaviour
             this.SplashScreens,
             this.TitleScreen,
             this.PlayerInformationScreen,
+            this.MainMenuScreen,
         });
         
         this.HideAllScreens();
@@ -45,7 +47,7 @@ public class UIController : MonoBehaviour
 
     private IEnumerator ShowTitleScreen()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         
         this.HideAllScreens();
 
@@ -57,5 +59,12 @@ public class UIController : MonoBehaviour
         this.HideAllScreens();
 
         this.SetDocumentVisibility(this.PlayerInformationScreen, true);
+    }
+
+    public void ShowMainMenuScreen()
+    {
+        this.HideAllScreens();
+
+        this.SetDocumentVisibility(this.MainMenuScreen, true);
     }
 }
