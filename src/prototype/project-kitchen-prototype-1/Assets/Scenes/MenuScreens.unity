@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 308187926}
   - component: {fileID: 308187925}
   - component: {fileID: 308187924}
+  - component: {fileID: 308187927}
   m_Layer: 0
   m_Name: OptionsScreen
   m_TagString: Untagged
@@ -240,6 +241,20 @@ Transform:
   m_Father: {fileID: 55126781}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &308187927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308187923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fb042062ee84c07842f08c7ce970c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIController: {fileID: 55126782}
+  UIDocument: {fileID: 308187924}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
