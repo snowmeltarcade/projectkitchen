@@ -3,19 +3,16 @@
     <ui:VisualElement name="Root" class="fullscreen" style="align-items: stretch; justify-content: flex-start;">
         <ui:VisualElement style="padding-left: 32px; flex-grow: 1;">
             <ui:VisualElement name="Title">
-                <ui:Label tabindex="-1" text="The Chow Station" display-tooltip-when-elided="true" class="fullscreen" style="font-size: 50px; -unity-text-align: middle-left;" />
+                <ui:Label tabindex="-1" text="Connect to Server" display-tooltip-when-elided="true" class="fullscreen" style="font-size: 50px; -unity-text-align: middle-left;" />
             </ui:VisualElement>
             <ui:VisualElement style="align-items: stretch;">
-                <ui:Button tabindex="-1" text="Single Player" display-tooltip-when-elided="true" name="buttonSinglePlayer" style="align-items: flex-start;" />
+                <ui:Toggle label="Music" />
             </ui:VisualElement>
             <ui:VisualElement style="align-items: stretch;">
-                <ui:Button tabindex="-1" text="Start Game" display-tooltip-when-elided="true" name="buttonStartGame" style="align-items: flex-start;" />
-            </ui:VisualElement>
-            <ui:VisualElement style="align-items: stretch;">
-                <ui:Button tabindex="-1" text="Join Game" display-tooltip-when-elided="true" name="buttonJoinGame" style="align-items: flex-start;" />
+                <ui:Toggle label="Sfx" />
             </ui:VisualElement>
             <ui:VisualElement style="align-items: flex-start;">
-                <ui:Button tabindex="-1" text="Back" display-tooltip-when-elided="true" name="buttonBack" style="align-items: flex-start;" />
+                <ui:Button tabindex="-1" text="Back" display-tooltip-when-elided="true" name="buttonBack" style="align-items: stretch;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
