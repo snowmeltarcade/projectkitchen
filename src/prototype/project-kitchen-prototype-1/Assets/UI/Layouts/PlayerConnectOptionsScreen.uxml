@@ -3,7 +3,7 @@
     <ui:VisualElement name="Root" class="fullscreen" style="align-items: stretch; justify-content: flex-start;">
         <ui:VisualElement style="padding-left: 32px; flex-grow: 1;">
             <ui:VisualElement name="Title">
-                <ui:Label tabindex="-1" text="The Chow Station" display-tooltip-when-elided="true" class="fullscreen" style="font-size: 50px; -unity-text-align: middle-left;" />
+                <ui:Label tabindex="-1" text="Player Connect" display-tooltip-when-elided="true" class="fullscreen" style="font-size: 50px; -unity-text-align: middle-left;" />
             </ui:VisualElement>
             <ui:VisualElement style="align-items: stretch;">
                 <ui:Button tabindex="-1" text="Play" display-tooltip-when-elided="true" name="buttonPlay" style="align-items: flex-start;" />

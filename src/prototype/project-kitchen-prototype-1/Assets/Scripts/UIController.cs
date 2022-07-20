@@ -10,6 +10,8 @@ public class UIController : MonoBehaviour
     public UIDocument TitleScreen;
     public UIDocument PlayerInformationScreen;
     public UIDocument MainMenuScreen;
+    public UIDocument OptionsScreen;
+    public UIDocument PlayerConnectOptionsScreen;
 
     private List<UIDocument> Screens { get; set; } = new();
         
@@ -23,6 +25,8 @@ public class UIController : MonoBehaviour
             this.TitleScreen,
             this.PlayerInformationScreen,
             this.MainMenuScreen,
+            this.OptionsScreen,
+            this.PlayerConnectOptionsScreen,
         });
         
         this.HideAllScreens();
@@ -66,5 +70,19 @@ public class UIController : MonoBehaviour
         this.HideAllScreens();
 
         this.SetDocumentVisibility(this.MainMenuScreen, true);
+    }
+
+    public void ShowOptionsScreen()
+    {
+        this.HideAllScreens();
+
+        this.SetDocumentVisibility(this.OptionsScreen, true);
+    }
+
+    public void ShowPlayerConnectOptionsScreen()
+    {
+        this.HideAllScreens();
+
+        this.SetDocumentVisibility(this.PlayerConnectOptionsScreen, true);
     }
 }
