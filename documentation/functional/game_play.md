@@ -13,7 +13,6 @@ Having fun is the main game play objective. Game rules and logic should be simpl
     - [Player Disconnections](#player-disconnections)
   - [Passing Ingredients](#passing-ingredients)
   - [Achievements](#achievements)
-    - [Points](#points)
     - [Stars](#stars)
 
 ## Goals
@@ -107,12 +106,10 @@ In the case that two workstations are found of equal distance to the current wor
 
 ## Achievements
 
-For every level that is passed, the players involved are awarded points and stars. These can be used to purchase new workstations or upgrade existing [workstations](workstations.md).
-
-### Points
-
-Points are awarded based on the time it takes to complete an order. The quicker an order is served, the more points awarded.
+For every level that is passed, the lead player is awarded stars. These can be used to purchase new workstations or upgrade existing [workstations](workstations.md).
 
 ### Stars
 
-Each level has a minimum number of points required to count as a passed level. If the minimum number of points is not reached, the level is failed. Each level also has 3 stars that can be achieved. Each star also requires a set number of points. If the number of received points is greater than that required by a star, that star is awarded.
+Each level has a maximum of 5 stars that can be awarded. The number of stars awarded is determined by the average star rating given for all orders in the level.
+
+If 0 stars is awarded, the level is not passed. If 1 or more stars is awarded, the level is passed.
