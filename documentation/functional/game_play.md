@@ -19,6 +19,7 @@ Having fun is the main game play objective. Game rules and logic should be simpl
   - [Plates](#plates)
   - [Achievements](#achievements)
     - [Stars](#stars)
+  - [World Map](#world-map)
 
 ## Goals
 
@@ -148,3 +149,9 @@ Each level has a maximum of 5 stars that can be awarded. The number of stars awa
 Stars can only be awarded once. The player may retry a level in order to get the full number of stars, but stars already awarded cannot be awarded again.
 
 Stars that have been awarded can be used to level up and purchase workstations.
+
+## World Map
+
+The game world is organized into different areas. Each area contains a set of levels. Some levels are mandatory to move onto the next level. Other levels are optional.
+
+The player moves around the dragging the map and selecting a level to play.
