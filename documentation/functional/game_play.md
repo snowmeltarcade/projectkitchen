@@ -97,12 +97,12 @@ To pass a level, at last 1 star must have been awarded, else the level has been 
 
 Each time a plate of food is served to a customer, that customer gives the restaurant a 0 to 5 rating.
 
-1. 0 stars means the ingredients and/or plate did not match what was ordered
-2. 1 star means that all of the expected ingredients were on the plate, but none were prepared as ordered
-3. 2 stars means that less than or equal to half of the ingredients were prepared as ordered
-4. 3 stars means that more than half, but not all, of the ingredients were prepared as ordered
-5. 4 stars means that all ingredients and the plate were prepared as ordered, but the customer had to wait longer than they expected
-6. 5 stars means that all ingredients and the plate were prepared as ordered and the customer did not have to wait longer than they expected
+1. 0 stars means that the order was unfulfilled
+2. 1 star means the ingredients and/or plate did not match what was ordered
+3. 2 stars means that the ingredients and plate were correct, but no ingredients were prepared correctly
+4. 3 stars means that the ingredients and plate were correct, but less than 100% of the ingredients were prepared correctly
+5. 4 stars means that the ingredients and plate were correct, and all of the ingredients were prepared correctly or the order was served in less time than the customer expected
+6. 5 stars means that the ingredients and plate were correct, and all of the ingredients were prepared correctly and the order was served in less time than the customer expected
 
 ### Moving Between Workstations
 
