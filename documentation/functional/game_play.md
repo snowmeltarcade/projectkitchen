@@ -9,9 +9,14 @@ Having fun is the main game play objective. Game rules and logic should be simpl
   - [Game Flow](#game-flow)
   - [Configuring Levels](#configuring-levels)
   - [Cooking Levels](#cooking-levels)
+    - [Passing and Failing](#passing-and-failing)
+    - [Order Ratings](#order-ratings)
     - [Moving Between Workstations](#moving-between-workstations)
     - [Player Disconnections](#player-disconnections)
-  - [Passing Ingredients](#passing-ingredients)
+  - [Ingredients](#ingredients)
+    - [Passing Ingredients](#passing-ingredients)
+    - [Preparing Ingredients](#preparing-ingredients)
+  - [Plates](#plates)
   - [Achievements](#achievements)
     - [Stars](#stars)
 
@@ -62,10 +67,9 @@ A typical game level has the following flow:
 
 ```mermaid
 flowchart TB;
-    start_level([Start level])-->game_play_tips[Game play tips are displayed during level load];
-    game_play_tips-->level_goals[Players informed of what recipes are expected and the minimum number of points to pass the level];
-    level_goals-->assignments[Players assigned to a random workstation];
-    assignments-->countdown[Countdown timer in seconds - 3, 2, 1];
+    kitchen_lobby(["Players select their workstations"])-->game_play_tips[Game play tips are displayed during level load];
+    game_play_tips-->level_goals[Players informed of what recipes are expected];
+    level_goals-->countdown[Countdown timer in seconds - 3, 2, 1];
     countdown-->level_timer_begins[Level timer begins];
     level_timer_begins-->orders_placed[Orders continually placed by restaurant customers];
     orders_placed-->communication[Players communicate what ingredients they need];
@@ -75,14 +79,29 @@ flowchart TB;
     prepare_ingredients-->passing_prepared_ingredients["Players pass the prepared ingredients up, down left or right until the ingredients end up at the plating workstation"];
     passing_prepared_ingredients-->plating_up[Player at plating up workstation puts prepared ingredients on a plate];
     plating_up-->pass_plate_to_serving_area[When the plate has all the needed ingredients for an order,<br/>the player passes the plate to their up, down, left or right until the plate ends up at the serving area workstation];
-    pass_plate_to_serving_area-->serving_plate[Player places plate onto serving area];
-    serving_plate-->points_assigned[Points assigned to players based on how long the customers had to wait for the order];
-    points_assigned-->game_time_expired{Game Time Expired?};
+    pass_plate_to_serving_area-->serving_plate[Player places plate onto a menu order on the serving area workstation];
+    serving_plate-->rating_assigned["Rating given by customer based on how long their had to wait for their order<br/>and how accurately prepared the ingredients were."];
+    rating_assigned-->game_time_expired{Game Time Expired?};
     game_time_expired--No-->orders_placed;
     game_time_expired--Yes-->game_play_stopped[Game play stopped];
     game_play_stopped-->results_screen[Results screen displayed];
     results_screen-->exit_level([Exit level]);
 ```
+
+### Passing and Failing
+
+To pass a level, at last 1 star must have been awarded, else the level has been failed.
+
+### Order Ratings
+
+Each time a plate of food is served to a customer, that customer gives the restaurant a 0 to 5 rating.
+
+1. 0 stars means the ingredients and/or plate did not match what was ordered
+2. 1 star means that all of the expected ingredients were on the plate, but none were prepared as ordered
+3. 2 stars means that less than or equal to half of the ingredients were prepared as ordered
+4. 3 stars means that more than half, but not all, of the ingredients were prepared as ordered
+5. 4 stars means that all ingredients and the plate were prepared as ordered, but the customer had to wait longer than they expected
+6. 5 stars means that all ingredients and the plate were prepared as ordered and the customer did not have to wait longer than they expected
 
 ### Moving Between Workstations
 
@@ -92,7 +111,11 @@ Players can move between workstations during game play. They will do this by usi
 
 If a player gets disconnected from game play (or the app stops running, due to being minimized/put into the background on a mobile device etc...), that player automatically gets removed from active game play. When that player reconnects (or the app starts running again), they will start out at the workstation selection screen.
 
-## Passing Ingredients
+## Ingredients
+
+Ingredients need to be passed and prepared so they can be plated according to customer orders
+
+### Passing Ingredients
 
 The player has to pass ingredients either up, down, left or right to a different workstations. As workstations are positioned in a grid, the player must keep in mind where a workstation is in relation to their current workstation. Workstations are positions directly next to each other, so there are no gaps between workstations.
 
@@ -104,6 +127,16 @@ This is an example of how workstations may be positioned:
 
 In the case that two workstations are found of equal distance to the current workstation, the workstation is randomly selected from those workstations.
 
+### Preparing Ingredients
+
+[Ingredients](ingredients.md) can be prepared up to 5 different ways. A workstation is required to prepare an ingredient. When a customer makes an order, they will also specify how they would like an ingredient to be prepared.
+
+## Plates
+
+Prepared ingredients should be put on a [plate](plates.md) so they can be given to a customer. A customer will specify what type of plate they expect their food to be put on.
+
+The number of certain types of plates is limited. When this type of plate is given to a customer, will be returned to a wash area after a set period of time. Some plates can also be dropped and smashed, thus rendering them unusable.
+
 ## Achievements
 
 For every level that is passed, the lead player is awarded stars. These can be used to purchase new workstations or upgrade existing [workstations](workstations.md).
@@ -112,4 +145,6 @@ For every level that is passed, the lead player is awarded stars. These can be u
 
 Each level has a maximum of 5 stars that can be awarded. The number of stars awarded is determined by the average star rating given for all orders in the level.
 
-If 0 stars is awarded, the level is not passed. If 1 or more stars is awarded, the level is passed.
+Stars can only be awarded once. The player may retry a level in order to get the full number of stars, but stars already awarded cannot be awarded again.
+
+Stars that have been awarded can be used to level up and purchase workstations.
