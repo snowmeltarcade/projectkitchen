@@ -18,7 +18,22 @@ namespace SnowMeltArcade.ProjectKitchen.UI
                 return;
             }
 
-            buttonBack.RegisterCallback<ClickEvent>(evt => {  });
+            buttonBack.RegisterCallback<ClickEvent>(evt =>
+            {
+                this.UIController.ShowStartServerScreen();
+            });
+            
+            var buttonPlay = this.UIDocument.rootVisualElement.Q<Button>("buttonPlay");
+            if (buttonPlay is null)
+            {
+                Debug.LogError("Failed to find button `buttonPlay`.");
+                return;
+            }
+
+            buttonPlay.RegisterCallback<ClickEvent>(evt =>
+            {
+                this.UIController.ShowLoadLevelScreen();
+            });
         }
     }
 }

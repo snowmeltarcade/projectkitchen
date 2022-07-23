@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace SnowMeltArcade.ProjectKitchen.Scenes.MenuScreens
@@ -13,10 +14,8 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.MenuScreens
         public UIDocument MainMenuScreen;
         public UIDocument OptionsScreen;
         public UIDocument PlayerConnectOptionsScreen;
-        public UIDocument SelectLevelScreen;
         public UIDocument ConnectToServerScreen;
         public UIDocument StartServerScreen;
-        public UIDocument LoadLevelScreen;
 
         private List<UIDocument> Screens { get; set; } = new();
 
@@ -32,10 +31,8 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.MenuScreens
                 this.MainMenuScreen,
                 this.OptionsScreen,
                 this.PlayerConnectOptionsScreen,
-                this.SelectLevelScreen,
                 this.ConnectToServerScreen,
                 this.StartServerScreen,
-                this.LoadLevelScreen
             });
 
             this.HideAllScreens();
@@ -99,7 +96,7 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.MenuScreens
         {
             this.HideAllScreens();
 
-            this.SetDocumentVisibility(this.SelectLevelScreen, true);
+            SceneManager.LoadScene("Scenes/SelectLevel", LoadSceneMode.Single);
         }
 
         public void ShowConnectToServerScreen()
@@ -120,7 +117,7 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.MenuScreens
         {
             this.HideAllScreens();
 
-            this.SetDocumentVisibility(this.LoadLevelScreen, true);
+            SceneManager.LoadScene("Scenes/Level", LoadSceneMode.Single);
         }
     }
 }
