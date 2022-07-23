@@ -126,8 +126,6 @@ This is an example of how workstations may be positioned:
 
 ![Workstation Selection](images/workstation_selection.drawio.png)
 
-In the case that two workstations are found of equal distance to the current workstation, the workstation is randomly selected from those workstations.
-
 ### Preparing Ingredients
 
 [Ingredients](ingredients.md) can be prepared up to 5 different ways. A workstation is required to prepare an ingredient. When a customer makes an order, they will also specify how they would like an ingredient to be prepared.
