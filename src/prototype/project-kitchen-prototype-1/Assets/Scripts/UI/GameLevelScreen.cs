@@ -19,6 +19,15 @@ namespace SnowMeltArcade.ProjectKitchen.UI
             }
 
             buttonMenu.RegisterCallback<ClickEvent>(evt => { this.UIController.ShowLevelMenuScreen(); });
+
+            var buttonSuccess = this.UIDocument.rootVisualElement.Q<Button>("buttonSuccess");
+            if (buttonSuccess is null)
+            {
+                Debug.LogError("Failed to find button `buttonSuccess`.");
+                return;
+            }
+
+            buttonSuccess.RegisterCallback<ClickEvent>(evt => { this.UIController.ShowLevelSuccessScreen(); });
         }
     }
 }

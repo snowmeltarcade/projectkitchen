@@ -10,6 +10,7 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.GameLevel
     {
         public UIDocument GameLevelScreen;
         public UIDocument LevelMenuScreen;
+        public UIDocument LevelSuccessScreen;
 
         private List<UIDocument> Screens { get; set; } = new();
 
@@ -20,6 +21,7 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.GameLevel
             {
                 this.GameLevelScreen,
                 this.LevelMenuScreen,
+                this.LevelSuccessScreen,
             });
 
             this.HideAllScreens();
@@ -59,6 +61,13 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.GameLevel
             this.HideAllScreens();
 
             SceneManager.LoadScene("Scenes/SelectLevel", LoadSceneMode.Single);
+        }
+
+        public void ShowLevelSuccessScreen()
+        {
+            this.HideAllScreens();
+
+            this.SetDocumentVisibility(this.LevelSuccessScreen, true);
         }
     }
 }
