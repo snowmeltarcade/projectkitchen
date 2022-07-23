@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
     public UIDocument SelectLevelScreen;
     public UIDocument ConnectToServerScreen;
     public UIDocument StartServerScreen;
+    public UIDocument LoadLevelScreen;
 
     private List<UIDocument> Screens { get; set; } = new();
         
@@ -33,6 +34,7 @@ public class UIController : MonoBehaviour
             this.SelectLevelScreen,
             this.ConnectToServerScreen,
             this.StartServerScreen,
+            this.LoadLevelScreen
         });
         
         this.HideAllScreens();
@@ -111,5 +113,12 @@ public class UIController : MonoBehaviour
         this.HideAllScreens();
 
         this.SetDocumentVisibility(this.StartServerScreen, true);   
+    }
+
+    public void ShowLoadLevelScreen()
+    {
+        this.HideAllScreens();
+
+        this.SetDocumentVisibility(this.LoadLevelScreen, true);   
     }
 }

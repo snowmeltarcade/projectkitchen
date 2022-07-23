@@ -3,16 +3,23 @@
     <ui:VisualElement name="Root" class="fullscreen" style="align-items: stretch; justify-content: flex-start;">
         <ui:VisualElement style="padding-left: 32px; flex-grow: 1;">
             <ui:VisualElement name="Title">
-                <ui:Label tabindex="-1" text="The Chow Station" display-tooltip-when-elided="true" class="fullscreen" style="font-size: 50px; -unity-text-align: middle-left;" />
+                <ui:Label tabindex="-1" text="Start Server" display-tooltip-when-elided="true" class="fullscreen" style="font-size: 50px; -unity-text-align: middle-left;" />
             </ui:VisualElement>
-            <ui:VisualElement style="align-items: stretch;">
-                <ui:Button tabindex="-1" text="Start Game" display-tooltip-when-elided="true" name="buttonStartGame" style="align-items: flex-start;" />
+            <ui:VisualElement style="align-items: stretch; flex-direction: row; justify-content: flex-start;">
+                <ui:Label tabindex="-1" text="Server Code" display-tooltip-when-elided="true" style="width: 35%;" />
+                <ui:Label tabindex="-1" text="ABCDEFGHI" display-tooltip-when-elided="true" />
             </ui:VisualElement>
-            <ui:VisualElement style="align-items: stretch;">
-                <ui:Button tabindex="-1" text="Join Game" display-tooltip-when-elided="true" name="buttonJoinGame" style="align-items: flex-start;" />
+            <ui:VisualElement style="align-items: stretch; flex-direction: row; justify-content: flex-start;">
+                <ui:Label tabindex="-1" text="Approve Players" display-tooltip-when-elided="true" style="width: 35%;" />
+                <ui:ListView focusable="true" name="listApprovePlayers" />
             </ui:VisualElement>
-            <ui:VisualElement style="align-items: flex-start;">
-                <ui:Button tabindex="-1" text="Back" display-tooltip-when-elided="true" name="buttonBack" style="align-items: flex-start;" />
+            <ui:VisualElement style="align-items: stretch; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
+                <ui:VisualElement>
+                    <ui:Button tabindex="-1" text="Back" display-tooltip-when-elided="true" name="buttonBack" style="align-items: flex-start;" />
+                </ui:VisualElement>
+                <ui:VisualElement>
+                    <ui:Button tabindex="-1" text="Let&apos;s Go!" display-tooltip-when-elided="true" name="buttonGo" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
