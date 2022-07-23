@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     public UIDocument PlayerConnectOptionsScreen;
     public UIDocument SelectLevelScreen;
     public UIDocument ConnectToServerScreen;
+    public UIDocument StartServerScreen;
 
     private List<UIDocument> Screens { get; set; } = new();
         
@@ -31,6 +32,7 @@ public class UIController : MonoBehaviour
             this.PlayerConnectOptionsScreen,
             this.SelectLevelScreen,
             this.ConnectToServerScreen,
+            this.StartServerScreen,
         });
         
         this.HideAllScreens();
@@ -102,5 +104,12 @@ public class UIController : MonoBehaviour
         this.HideAllScreens();
 
         this.SetDocumentVisibility(this.ConnectToServerScreen, true);
+    }
+
+    public void ShowStartServerScreen()
+    {
+        this.HideAllScreens();
+
+        this.SetDocumentVisibility(this.StartServerScreen, true);   
     }
 }

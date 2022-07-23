@@ -5,14 +5,11 @@
             <ui:VisualElement name="Title">
                 <ui:Label tabindex="-1" text="Select Level" display-tooltip-when-elided="true" class="fullscreen" style="font-size: 50px; -unity-text-align: middle-left;" />
             </ui:VisualElement>
-            <ui:VisualElement style="align-items: stretch;">
-                <ui:Toggle label="Music" />
-            </ui:VisualElement>
-            <ui:VisualElement style="align-items: stretch;">
-                <ui:Toggle label="Sfx" />
+            <ui:VisualElement style="align-items: flex-start;">
+                <ui:Label tabindex="-1" text="Pretend your seeing the game map..." display-tooltip-when-elided="true" />
             </ui:VisualElement>
             <ui:VisualElement style="align-items: flex-start;">
-                <ui:Button tabindex="-1" text="Back" display-tooltip-when-elided="true" name="buttonBack" style="align-items: stretch;" />
+                <ui:Button tabindex="-1" text="Play!" display-tooltip-when-elided="true" name="buttonPlay" style="align-items: stretch;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
