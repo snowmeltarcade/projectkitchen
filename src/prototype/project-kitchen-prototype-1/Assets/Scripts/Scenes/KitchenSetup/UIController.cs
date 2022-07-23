@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-namespace SnowMeltArcade.ProjectKitchen.Scenes.SelectLevel
+namespace SnowMeltArcade.ProjectKitchen.Scenes.KitchenSetup
 {
     public class UIController : MonoBehaviour
     {
-        public UIDocument SelectLevelScreen;
+        public UIDocument KitchenSetupScreen;
 
         private List<UIDocument> Screens { get; set; } = new();
 
@@ -17,12 +16,12 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.SelectLevel
             this.Screens.Clear();
             this.Screens.AddRange(new[]
             {
-                this.SelectLevelScreen,
+                this.KitchenSetupScreen,
             });
 
             this.HideAllScreens();
 
-            this.SetDocumentVisibility(this.SelectLevelScreen, true);
+            this.SetDocumentVisibility(this.KitchenSetupScreen, true);
         }
 
         private void HideAllScreens()
@@ -36,20 +35,6 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.SelectLevel
         private void SetDocumentVisibility(UIDocument document, bool visible)
         {
             document.rootVisualElement.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
-        }
-
-        public void ShowStartServerScreen()
-        {
-            this.HideAllScreens();
-
-            SceneManager.LoadScene("Scenes/MenuScreens", LoadSceneMode.Single);
-        }
-
-        public void ShowLoadLevelScreen()
-        {
-            this.HideAllScreens();
-
-            SceneManager.LoadScene("Scenes/LoadLevel", LoadSceneMode.Single);
         }
     }
 }

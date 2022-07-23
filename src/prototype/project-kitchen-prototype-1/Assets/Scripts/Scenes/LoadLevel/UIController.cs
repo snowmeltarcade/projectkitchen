@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace SnowMeltArcade.ProjectKitchen.Scenes.LoadLevel
@@ -35,6 +36,13 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.LoadLevel
         private void SetDocumentVisibility(UIDocument document, bool visible)
         {
             document.rootVisualElement.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
+        }
+
+        public void ShowKitchenSetupScreen()
+        {
+            this.HideAllScreens();
+
+            SceneManager.LoadScene("Scenes/KitchenSetup", LoadSceneMode.Single);
         }
     }
 }

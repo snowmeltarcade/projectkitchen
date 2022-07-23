@@ -1,3 +1,4 @@
+using System.Collections;
 using SnowMeltArcade.ProjectKitchen.Scenes.LoadLevel;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,6 +12,14 @@ namespace SnowMeltArcade.ProjectKitchen.UI
 
         private void OnEnable()
         {
+            this.StartCoroutine(this.LoadLevel());
+        }
+
+        private IEnumerator LoadLevel()
+        {
+            yield return new WaitForSeconds(1);
+
+            this.UIController.ShowKitchenSetupScreen();
         }
     }
 }
