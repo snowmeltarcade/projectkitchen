@@ -2,5 +2,6 @@
     <Style src="project://database/Assets/UI/Styles/Global.uss?fileID=7433441132597879392&amp;guid=47205f5331149451bad2856e011d5b8e&amp;type=3#Global" />
     <ui:VisualElement name="Root" class="fullscreen" style="align-items: flex-end; justify-content: flex-start;">
         <ui:Button tabindex="-1" text="Menu" display-tooltip-when-elided="true" name="buttonMenu" />
+        <ui:Label tabindex="-1" text="Level Menu..." display-tooltip-when-elided="true" />
     </ui:VisualElement>
 </ui:UXML>

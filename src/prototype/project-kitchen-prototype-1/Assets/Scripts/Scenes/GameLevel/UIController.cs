@@ -9,6 +9,7 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.GameLevel
     public class UIController : MonoBehaviour
     {
         public UIDocument GameLevelScreen;
+        public UIDocument LevelMenuScreen;
 
         private List<UIDocument> Screens { get; set; } = new();
 
@@ -18,6 +19,7 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.GameLevel
             this.Screens.AddRange(new[]
             {
                 this.GameLevelScreen,
+                this.LevelMenuScreen,
             });
 
             this.HideAllScreens();
@@ -36,6 +38,13 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.GameLevel
         private void SetDocumentVisibility(UIDocument document, bool visible)
         {
             document.rootVisualElement.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
+        }
+
+        public void ShowLevelMenuScreen()
+        {
+            this.HideAllScreens();
+
+            this.SetDocumentVisibility(this.LevelMenuScreen, true);
         }
     }
 }
