@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-namespace SnowMeltArcade.ProjectKitchen.Scenes.KitchenLobby
+namespace SnowMeltArcade.ProjectKitchen.Scenes.GameLevel
 {
     public class UIController : MonoBehaviour
     {
-        public UIDocument KitchenLobbyScreen;
+        public UIDocument GameLevelScreen;
 
         private List<UIDocument> Screens { get; set; } = new();
 
@@ -17,12 +17,12 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.KitchenLobby
             this.Screens.Clear();
             this.Screens.AddRange(new[]
             {
-                this.KitchenLobbyScreen,
+                this.GameLevelScreen,
             });
 
             this.HideAllScreens();
 
-            this.SetDocumentVisibility(this.KitchenLobbyScreen, true);
+            this.SetDocumentVisibility(this.GameLevelScreen, true);
         }
 
         private void HideAllScreens()
@@ -36,13 +36,6 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.KitchenLobby
         private void SetDocumentVisibility(UIDocument document, bool visible)
         {
             document.rootVisualElement.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
-        }
-
-        public void ShowGameLevelScreen()
-        {
-            this.HideAllScreens();
-
-            SceneManager.LoadScene("Scenes/GameLevel", LoadSceneMode.Single);
         }
     }
 }

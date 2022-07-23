@@ -11,6 +11,14 @@ namespace SnowMeltArcade.ProjectKitchen.UI
 
         private void OnEnable()
         {
+            var buttonOK = this.UIDocument.rootVisualElement.Q<Button>("buttonOK");
+            if (buttonOK is null)
+            {
+                Debug.LogError("Failed to find button `buttonOK`.");
+                return;
+            }
+
+            buttonOK.RegisterCallback<ClickEvent>(evt => { this.UIController.ShowGameLevelScreen(); });
         }
     }
 }
