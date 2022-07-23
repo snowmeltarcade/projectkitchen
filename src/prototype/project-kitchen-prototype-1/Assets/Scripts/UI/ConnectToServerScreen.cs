@@ -1,38 +1,33 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using SnowMeltArcade.ProjectKitchen.Scenes.MenuScreens;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ConnectToServerScreen : MonoBehaviour
+namespace SnowMeltArcade.ProjectKitchen.UI
 {
-    public UIController UIController;
-    public UIDocument UIDocument;
-    
-    private void OnEnable()
+    public class ConnectToServerScreen : MonoBehaviour
     {
-        var buttonBack = this.UIDocument.rootVisualElement.Q<Button>("buttonBack");
-        if (buttonBack is null)
-        {
-            Debug.LogError("Failed to find button `buttonBack`.");
-            return;
-        }
+        public UIController UIController;
+        public UIDocument UIDocument;
 
-        buttonBack.RegisterCallback<ClickEvent>(evt =>
+        private void OnEnable()
         {
-            this.UIController.ShowPlayerConnectOptionsScreen();
-        });
-        
-        var buttonJoinGame = this.UIDocument.rootVisualElement.Q<Button>("buttonJoinGame");
-        if (buttonJoinGame is null)
-        {
-            Debug.LogError("Failed to find button `buttonJoinGame`.");
-            return;
-        }
+            var buttonBack = this.UIDocument.rootVisualElement.Q<Button>("buttonBack");
+            if (buttonBack is null)
+            {
+                Debug.LogError("Failed to find button `buttonBack`.");
+                return;
+            }
 
-        buttonJoinGame.RegisterCallback<ClickEvent>(evt =>
-        {
-            this.UIController.ShowLoadLevelScreen();
-        });
+            buttonBack.RegisterCallback<ClickEvent>(evt => { this.UIController.ShowPlayerConnectOptionsScreen(); });
+
+            var buttonJoinGame = this.UIDocument.rootVisualElement.Q<Button>("buttonJoinGame");
+            if (buttonJoinGame is null)
+            {
+                Debug.LogError("Failed to find button `buttonJoinGame`.");
+                return;
+            }
+
+            buttonJoinGame.RegisterCallback<ClickEvent>(evt => { this.UIController.ShowLoadLevelScreen(); });
+        }
     }
 }

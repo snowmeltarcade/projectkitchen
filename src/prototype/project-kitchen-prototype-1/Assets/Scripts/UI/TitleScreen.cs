@@ -1,19 +1,20 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using SnowMeltArcade.ProjectKitchen.Scenes.MenuScreens;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class TitleScreen : MonoBehaviour
+namespace SnowMeltArcade.ProjectKitchen.UI
 {
-    public UIController UIController;
-    public UIDocument UIDocument;
-    
-    private void OnEnable()
+    public class TitleScreen : MonoBehaviour
     {
-        this.UIDocument.rootVisualElement.RegisterCallback<MouseDownEvent>(evt =>
+        public UIController UIController;
+        public UIDocument UIDocument;
+
+        private void OnEnable()
         {
-            this.UIController.ShowPlayerInformationScreen();
-        });
+            this.UIDocument.rootVisualElement.RegisterCallback<MouseDownEvent>(evt =>
+            {
+                this.UIController.ShowPlayerInformationScreen();
+            });
+        }
     }
 }

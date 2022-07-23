@@ -1,50 +1,42 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using SnowMeltArcade.ProjectKitchen.Scenes.MenuScreens;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlayerConnectOptionsScreen : MonoBehaviour
+namespace SnowMeltArcade.ProjectKitchen.UI
 {
-    public UIController UIController;
-    public UIDocument UIDocument;
-    
-    private void OnEnable()
+    public class PlayerConnectOptionsScreen : MonoBehaviour
     {
-        var buttonStartGame = this.UIDocument.rootVisualElement.Q<Button>("buttonStartGame");
-        if (buttonStartGame is null)
-        {
-            Debug.LogError("Failed to find button `buttonStartGame`.");
-            return;
-        }
+        public UIController UIController;
+        public UIDocument UIDocument;
 
-        buttonStartGame.RegisterCallback<ClickEvent>(evt =>
+        private void OnEnable()
         {
-            this.UIController.ShowStartServerScreen();
-        });
-        
-        var buttonJoinGame = this.UIDocument.rootVisualElement.Q<Button>("buttonJoinGame");
-        if (buttonJoinGame is null)
-        {
-            Debug.LogError("Failed to find button `buttonJoinGame`.");
-            return;
-        }
+            var buttonStartGame = this.UIDocument.rootVisualElement.Q<Button>("buttonStartGame");
+            if (buttonStartGame is null)
+            {
+                Debug.LogError("Failed to find button `buttonStartGame`.");
+                return;
+            }
 
-        buttonJoinGame.RegisterCallback<ClickEvent>(evt =>
-        {
-            this.UIController.ShowConnectToServerScreen();
-        });
-        
-        var buttonBack = this.UIDocument.rootVisualElement.Q<Button>("buttonBack");
-        if (buttonBack is null)
-        {
-            Debug.LogError("Failed to find button `buttonBack`.");
-            return;
-        }
+            buttonStartGame.RegisterCallback<ClickEvent>(evt => { this.UIController.ShowStartServerScreen(); });
 
-        buttonBack.RegisterCallback<ClickEvent>(evt =>
-        {
-            this.UIController.ShowMainMenuScreen();
-        });
+            var buttonJoinGame = this.UIDocument.rootVisualElement.Q<Button>("buttonJoinGame");
+            if (buttonJoinGame is null)
+            {
+                Debug.LogError("Failed to find button `buttonJoinGame`.");
+                return;
+            }
+
+            buttonJoinGame.RegisterCallback<ClickEvent>(evt => { this.UIController.ShowConnectToServerScreen(); });
+
+            var buttonBack = this.UIDocument.rootVisualElement.Q<Button>("buttonBack");
+            if (buttonBack is null)
+            {
+                Debug.LogError("Failed to find button `buttonBack`.");
+                return;
+            }
+
+            buttonBack.RegisterCallback<ClickEvent>(evt => { this.UIController.ShowMainMenuScreen(); });
+        }
     }
 }

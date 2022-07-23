@@ -1,26 +1,24 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using SnowMeltArcade.ProjectKitchen.Scenes.MenuScreens;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlayerInformationScreen : MonoBehaviour
+namespace SnowMeltArcade.ProjectKitchen.UI
 {
-    public UIController UIController;
-    public UIDocument UIDocument;
-    
-    private void OnEnable()
+    public class PlayerInformationScreen : MonoBehaviour
     {
-        var buttonOK = this.UIDocument.rootVisualElement.Q<Button>("buttonOK");
-        if (buttonOK is null)
-        {
-            Debug.LogError("Failed to find button `buttonOK`.");
-            return;
-        }
+        public UIController UIController;
+        public UIDocument UIDocument;
 
-        buttonOK.RegisterCallback<ClickEvent>(evt =>
+        private void OnEnable()
         {
-            this.UIController.ShowMainMenuScreen();
-        });
+            var buttonOK = this.UIDocument.rootVisualElement.Q<Button>("buttonOK");
+            if (buttonOK is null)
+            {
+                Debug.LogError("Failed to find button `buttonOK`.");
+                return;
+            }
+
+            buttonOK.RegisterCallback<ClickEvent>(evt => { this.UIController.ShowMainMenuScreen(); });
+        }
     }
 }
