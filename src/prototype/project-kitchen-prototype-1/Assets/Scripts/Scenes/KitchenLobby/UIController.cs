@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-namespace SnowMeltArcade.ProjectKitchen.Scenes.KitchenSetup
+namespace SnowMeltArcade.ProjectKitchen.Scenes.KitchenLobby
 {
     public class UIController : MonoBehaviour
     {
-        public UIDocument KitchenSetupScreen;
+        public UIDocument KitchenLobbyScreen;
 
         private List<UIDocument> Screens { get; set; } = new();
 
@@ -17,12 +17,12 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.KitchenSetup
             this.Screens.Clear();
             this.Screens.AddRange(new[]
             {
-                this.KitchenSetupScreen,
+                this.KitchenLobbyScreen,
             });
 
             this.HideAllScreens();
 
-            this.SetDocumentVisibility(this.KitchenSetupScreen, true);
+            this.SetDocumentVisibility(this.KitchenLobbyScreen, true);
         }
 
         private void HideAllScreens()
@@ -36,13 +36,6 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.KitchenSetup
         private void SetDocumentVisibility(UIDocument document, bool visible)
         {
             document.rootVisualElement.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
-        }
-
-        public void ShowKitchenLobbyScreen()
-        {
-            this.HideAllScreens();
-
-            SceneManager.LoadScene("Scenes/KitchenLobby", LoadSceneMode.Single);
         }
     }
 }

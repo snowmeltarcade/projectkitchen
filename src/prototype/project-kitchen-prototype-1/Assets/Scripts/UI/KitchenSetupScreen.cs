@@ -11,6 +11,14 @@ namespace SnowMeltArcade.ProjectKitchen.UI
 
         private void OnEnable()
         {
+            var buttonDone = this.UIDocument.rootVisualElement.Q<Button>("buttonDone");
+            if (buttonDone is null)
+            {
+                Debug.LogError("Failed to find button `buttonDone`.");
+                return;
+            }
+
+            buttonDone.RegisterCallback<ClickEvent>(evt => { this.UIController.ShowKitchenLobbyScreen(); });
         }
     }
 }
