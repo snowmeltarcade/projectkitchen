@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace SnowMeltArcade.ProjectKitchen.Scenes.Level
+namespace SnowMeltArcade.ProjectKitchen.Scenes.LoadLevel
 {
     public class UIController : MonoBehaviour
     {

@@ -1,4 +1,4 @@
-using SnowMeltArcade.ProjectKitchen.Scenes.Level;
+using SnowMeltArcade.ProjectKitchen.Scenes.LoadLevel;
 using UnityEngine;
 using UnityEngine.UIElements;
 

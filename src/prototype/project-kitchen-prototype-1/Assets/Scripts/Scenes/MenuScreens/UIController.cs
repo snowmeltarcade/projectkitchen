@@ -117,7 +117,7 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.MenuScreens
         {
             this.HideAllScreens();
 
-            SceneManager.LoadScene("Scenes/Level", LoadSceneMode.Single);
+            SceneManager.LoadScene("Scenes/LoadLevel", LoadSceneMode.Single);
         }
     }
 }
