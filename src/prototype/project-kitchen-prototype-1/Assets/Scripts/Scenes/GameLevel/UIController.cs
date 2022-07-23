@@ -24,7 +24,7 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.GameLevel
 
             this.HideAllScreens();
 
-            this.SetDocumentVisibility(this.GameLevelScreen, true);
+            this.ShowGameLevelScreen();
         }
 
         private void HideAllScreens()
@@ -40,11 +40,25 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.GameLevel
             document.rootVisualElement.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
         }
 
+        public void ShowGameLevelScreen()
+        {
+            this.HideAllScreens();
+
+            this.SetDocumentVisibility(this.GameLevelScreen, true);
+        }
+
         public void ShowLevelMenuScreen()
         {
             this.HideAllScreens();
 
             this.SetDocumentVisibility(this.LevelMenuScreen, true);
+        }
+
+        public void ShowSelectLevelScreen()
+        {
+            this.HideAllScreens();
+
+            SceneManager.LoadScene("Scenes/SelectLevel", LoadSceneMode.Single);
         }
     }
 }

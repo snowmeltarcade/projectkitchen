@@ -1,7 +1,13 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Styles/Global.uss?fileID=7433441132597879392&amp;guid=47205f5331149451bad2856e011d5b8e&amp;type=3#Global" />
-    <ui:VisualElement name="Root" class="fullscreen" style="align-items: flex-end; justify-content: flex-start;">
-        <ui:Button tabindex="-1" text="Menu" display-tooltip-when-elided="true" name="buttonMenu" />
-        <ui:Label tabindex="-1" text="Level Menu..." display-tooltip-when-elided="true" />
+    <ui:VisualElement name="Root" class="fullscreen" style="align-items: flex-start; justify-content: flex-start;">
+        <ui:VisualElement style="flex-grow: 1; width: 100%;">
+            <ui:Label tabindex="-1" text="Level Menu" display-tooltip-when-elided="true" style="font-size: 30px;" />
+            <ui:VisualElement style="margin-left: 32px;">
+                <ui:Button tabindex="-1" text="Exit Level" display-tooltip-when-elided="true" name="buttonExit" />
+                <ui:Button tabindex="-1" text="Pause" display-tooltip-when-elided="true" name="buttonPause" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Button tabindex="-1" text="Back" display-tooltip-when-elided="true" name="buttonBack" />
     </ui:VisualElement>
 </ui:UXML>
