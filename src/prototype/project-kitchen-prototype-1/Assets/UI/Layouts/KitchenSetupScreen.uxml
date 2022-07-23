@@ -1,7 +1,71 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="WorkstationSlot" src="project://database/Assets/UI/Layouts/Resources/WorkstationSlot.uxml?fileID=9197481963319205126&amp;guid=047199f8441c749cd873899ca694d8b6&amp;type=3#WorkstationSlot" />
     <Style src="project://database/Assets/UI/Styles/Global.uss?fileID=7433441132597879392&amp;guid=47205f5331149451bad2856e011d5b8e&amp;type=3#Global" />
-    <ui:VisualElement name="Root" class="fullscreen" style="align-items: flex-end; justify-content: flex-start; flex-direction: row;">
-        <ui:Label tabindex="-1" text="Setup Kitchen..." display-tooltip-when-elided="true" />
-        <ui:Button tabindex="-1" text="Done" display-tooltip-when-elided="true" name="buttonDone" style="flex-direction: row;" />
+    <ui:VisualElement name="Root" class="fullscreen" style="align-items: stretch; justify-content: flex-start; flex-direction: column;">
+        <ui:VisualElement name="TopRow" style="flex-direction: row; justify-content: space-between; align-items: flex-start;">
+            <ui:VisualElement name="RequiredWorkstations" style="flex-direction: row; align-items: flex-start; padding-left: 0; margin-left: 0;">
+                <ui:Label tabindex="-1" text="Required Workstations" display-tooltip-when-elided="true" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+            </ui:VisualElement>
+            <ui:Button tabindex="-1" text="Done" display-tooltip-when-elided="true" name="buttonDone" />
+        </ui:VisualElement>
+        <ui:VisualElement name="LayoutGrid" style="margin-left: 16px; margin-right: 16px; margin-top: 16px; margin-bottom: 16px;">
+            <ui:ScrollView mode="VerticalAndHorizontal" touch-scroll-type="Elastic" style="align-items: stretch;">
+                <ui:VisualElement style="flex-direction: row;">
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-direction: row;">
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-direction: row;">
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-direction: row;">
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-direction: row;">
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                    <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                </ui:VisualElement>
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement name="AvailableWorkstations" style="flex-direction: row; justify-content: flex-start;">
+            <ui:ScrollView mode="Horizontal" horizontal-scroller-visibility="AlwaysVisible" vertical-scroller-visibility="Hidden" touch-scroll-type="Elastic" style="flex-direction: column;">
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+                <ui:Instance template="WorkstationSlot" name="WorkstationSlot" />
+            </ui:ScrollView>
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
