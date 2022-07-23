@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Styles/Global.uss?fileID=7433441132597879392&amp;guid=47205f5331149451bad2856e011d5b8e&amp;type=3#Global" />
+    <ui:VisualElement name="Root" class="fullscreen" style="align-items: stretch; justify-content: space-between; flex-shrink: 1; flex-grow: 1; flex-direction: column;">
+        <ui:Label tabindex="-1" text="Oh Dear..." display-tooltip-when-elided="true" style="font-size: 40px;" />
+        <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
+            <ui:Button tabindex="-1" text="Select Level" display-tooltip-when-elided="true" name="buttonSelectLevel" style="flex-grow: 0;" />
+            <ui:Button tabindex="-1" text="Retry" display-tooltip-when-elided="true" name="buttonRetry" style="flex-grow: 0;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
