@@ -1,4 +1,4 @@
-using SnowMeltArcade.ProjectKitchen.Scenes.MenuScreens;
+using SnowMeltArcade.ProjectKitchen.Scenes.SelectLevel;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,14 +11,14 @@ namespace SnowMeltArcade.ProjectKitchen.UI
 
         private void OnEnable()
         {
-            var buttonPlay = this.UIDocument.rootVisualElement.Q<Button>("buttonPlay");
-            if (buttonPlay is null)
+            var buttonBack = this.UIDocument.rootVisualElement.Q<Button>("buttonBack");
+            if (buttonBack is null)
             {
-                Debug.LogError("Failed to find button `buttonPlay`.");
+                Debug.LogError("Failed to find button `buttonBack`.");
                 return;
             }
 
-            buttonPlay.RegisterCallback<ClickEvent>(evt => { this.UIController.ShowLoadLevelScreen(); });
+            buttonBack.RegisterCallback<ClickEvent>(evt => {  });
         }
     }
 }

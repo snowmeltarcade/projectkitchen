@@ -1,16 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Styles/Global.uss?fileID=7433441132597879392&amp;guid=47205f5331149451bad2856e011d5b8e&amp;type=3#Global" />
-    <ui:VisualElement name="Root" class="fullscreen" style="align-items: stretch; justify-content: flex-start;">
-        <ui:VisualElement style="padding-left: 32px; flex-grow: 1;">
-            <ui:VisualElement name="Title">
-                <ui:Label tabindex="-1" text="Select Level" display-tooltip-when-elided="true" class="fullscreen" style="font-size: 50px; -unity-text-align: middle-left;" />
-            </ui:VisualElement>
-            <ui:VisualElement style="align-items: flex-start;">
-                <ui:Label tabindex="-1" text="Pretend your seeing the game map..." display-tooltip-when-elided="true" />
-            </ui:VisualElement>
-            <ui:VisualElement style="align-items: flex-start;">
-                <ui:Button tabindex="-1" text="Play!" display-tooltip-when-elided="true" name="buttonPlay" style="align-items: stretch;" />
-            </ui:VisualElement>
-        </ui:VisualElement>
+    <ui:VisualElement name="Root" class="fullscreen" style="align-items: flex-start; justify-content: flex-end; flex-shrink: 1; flex-grow: 1;">
+        <ui:Button tabindex="-1" text="Back" display-tooltip-when-elided="true" name="buttonBack" style="flex-grow: 0;" />
     </ui:VisualElement>
 </ui:UXML>
