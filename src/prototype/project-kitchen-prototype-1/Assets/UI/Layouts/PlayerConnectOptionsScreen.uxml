@@ -6,9 +6,6 @@
                 <ui:Label tabindex="-1" text="The Chow Station" display-tooltip-when-elided="true" class="fullscreen" style="font-size: 50px; -unity-text-align: middle-left;" />
             </ui:VisualElement>
             <ui:VisualElement style="align-items: stretch;">
-                <ui:Button tabindex="-1" text="Single Player" display-tooltip-when-elided="true" name="buttonSinglePlayer" style="align-items: flex-start;" />
-            </ui:VisualElement>
-            <ui:VisualElement style="align-items: stretch;">
                 <ui:Button tabindex="-1" text="Start Game" display-tooltip-when-elided="true" name="buttonStartGame" style="align-items: flex-start;" />
             </ui:VisualElement>
             <ui:VisualElement style="align-items: stretch;">

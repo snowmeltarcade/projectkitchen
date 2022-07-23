@@ -11,18 +11,6 @@ public class PlayerConnectOptionsScreen : MonoBehaviour
     
     private void OnEnable()
     {
-        var buttonSinglePlayer = this.UIDocument.rootVisualElement.Q<Button>("buttonSinglePlayer");
-        if (buttonSinglePlayer is null)
-        {
-            Debug.LogError("Failed to find button `buttonSinglePlayer`.");
-            return;
-        }
-
-        buttonSinglePlayer.RegisterCallback<ClickEvent>(evt =>
-        {
-            this.UIController.ShowSelectLevelScreen();
-        });
-        
         var buttonStartGame = this.UIDocument.rootVisualElement.Q<Button>("buttonStartGame");
         if (buttonStartGame is null)
         {
