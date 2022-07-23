@@ -14,5 +14,6 @@ The design and functional features of this project.
 - [Kitchens](kitchens.md)
 - [Recipes](recipes.md)
 - Screens
+  - [Map](screens/screens_map.md)
   - [Server Session Create](screens/server_session_create.md)
   - [Server Session Join](screens/server_session_join.md)
