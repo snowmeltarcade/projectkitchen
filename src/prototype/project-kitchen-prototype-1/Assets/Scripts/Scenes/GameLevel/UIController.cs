@@ -69,5 +69,12 @@ namespace SnowMeltArcade.ProjectKitchen.Scenes.GameLevel
 
             this.SetDocumentVisibility(this.LevelSuccessScreen, true);
         }
+
+        public void ShowLoadLevelScreen()
+        {
+            this.HideAllScreens();
+
+            SceneManager.LoadScene("Scenes/LoadLevel", LoadSceneMode.Single);
+        }
     }
 }
