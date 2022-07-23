@@ -757,6 +757,7 @@ GameObject:
   - component: {fileID: 1668019942}
   - component: {fileID: 1668019944}
   - component: {fileID: 1668019943}
+  - component: {fileID: 1668019945}
   m_Layer: 0
   m_Name: ConnectToServerScreen
   m_TagString: Untagged
@@ -807,6 +808,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a410b213209442fb15a69799f0240a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1668019945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668019941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4677bfaaf5c6a48c3a4d8a89f9a5c507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIController: {fileID: 55126782}
+  UIDocument: {fileID: 1668019943}
 --- !u!1 &1870059073
 GameObject:
   m_ObjectHideFlags: 0

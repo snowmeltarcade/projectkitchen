@@ -20,7 +20,7 @@ public class PlayerConnectOptionsScreen : MonoBehaviour
 
         buttonStartGame.RegisterCallback<ClickEvent>(evt =>
         {
-            this.UIController.ShowSelectLevelScreen();
+            this.UIController.ShowStartServerScreen();
         });
         
         var buttonJoinGame = this.UIDocument.rootVisualElement.Q<Button>("buttonJoinGame");

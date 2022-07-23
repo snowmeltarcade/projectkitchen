@@ -20,7 +20,7 @@ public class SelectLevelScreen : MonoBehaviour
 
         buttonPlay.RegisterCallback<ClickEvent>(evt =>
         {
-            this.UIController.ShowStartServerScreen();
+            this.UIController.ShowLoadLevelScreen();
         });
     }
 }

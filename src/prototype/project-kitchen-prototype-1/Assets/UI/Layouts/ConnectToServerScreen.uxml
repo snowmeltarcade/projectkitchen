@@ -6,13 +6,11 @@
                 <ui:Label tabindex="-1" text="Connect to Server" display-tooltip-when-elided="true" class="fullscreen" style="font-size: 50px; -unity-text-align: middle-left;" />
             </ui:VisualElement>
             <ui:VisualElement style="align-items: stretch;">
-                <ui:Toggle label="Music" />
+                <ui:TextField picking-mode="Ignore" label="Server Code" value="filler text" />
             </ui:VisualElement>
-            <ui:VisualElement style="align-items: stretch;">
-                <ui:Toggle label="Sfx" />
-            </ui:VisualElement>
-            <ui:VisualElement style="align-items: flex-start;">
+            <ui:VisualElement style="align-items: flex-start; flex-direction: row; justify-content: space-between;">
                 <ui:Button tabindex="-1" text="Back" display-tooltip-when-elided="true" name="buttonBack" style="align-items: stretch;" />
+                <ui:Button tabindex="-1" text="Join Game" display-tooltip-when-elided="true" name="buttonJoinGame" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

@@ -20,7 +20,7 @@ public class StartServerScreen : MonoBehaviour
 
         buttonBack.RegisterCallback<ClickEvent>(evt =>
         {
-            this.UIController.ShowSelectLevelScreen();
+            this.UIController.ShowPlayerConnectOptionsScreen();
         });
         
         var buttonGo = this.UIDocument.rootVisualElement.Q<Button>("buttonGo");
@@ -32,7 +32,7 @@ public class StartServerScreen : MonoBehaviour
 
         buttonGo.RegisterCallback<ClickEvent>(evt =>
         {
-            this.UIController.ShowLoadLevelScreen();
+            this.UIController.ShowSelectLevelScreen();
         });
 
         var listApprovePlayers = this.UIDocument.rootVisualElement.Q<ListView>("listApprovePlayers");
