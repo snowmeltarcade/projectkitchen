@@ -6,6 +6,16 @@ using UnityEngine.UIElements;
 
 namespace SnowMeltArcade.ProjectKitchen.UI
 {
+    internal enum WorkstationType
+    {
+        Pantry,
+        Chopping,
+        PlateCupboard,
+        Serving,
+    }
+    
+    internal record WorkstationData(string Name, WorkstationType Type);
+    
     public class KitchenSetupScreen : MonoBehaviour
     {
         public UIController UIController;
@@ -119,10 +129,15 @@ namespace SnowMeltArcade.ProjectKitchen.UI
             
             availableWorkstations.Clear();
 
-            for (var i = 0; i < 10; ++i)
+            foreach (var type in (WorkstationType[])Enum.GetValues(typeof(WorkstationType)))
             {
                 var slot = workstationSlotTemplate.Instantiate();
                 var workstation = workstationTemplate.Instantiate();
+
+                WorkstationData workstationData = new(type.ToString(), type);
+                workstation.userData = workstationData;
+                
+                workstation.tooltip = workstationData.Name;
                 
                 workstation.RegisterCallback<ClickEvent>(e =>
                 {
@@ -164,6 +179,9 @@ namespace SnowMeltArcade.ProjectKitchen.UI
                 return;
             }
 
+            // it looks like this method *replaces* the parent of the child,
+            // so we do not need to manually remove this visual element from
+            // its current parent
             slot.Add(this.SelectedWorkstation);
 
             this.UnselectWorkstation(this.SelectedWorkstation);
