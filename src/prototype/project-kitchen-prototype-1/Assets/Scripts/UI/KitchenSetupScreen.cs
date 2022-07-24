@@ -1,3 +1,5 @@
+using System;
+using JetBrains.Annotations;
 using SnowMeltArcade.ProjectKitchen.Scenes.KitchenSetup;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -8,6 +10,9 @@ namespace SnowMeltArcade.ProjectKitchen.UI
     {
         public UIController UIController;
         public UIDocument UIDocument;
+
+        [CanBeNull]
+        private VisualElement SelectedWorkstation { get; set; }
 
         private void OnEnable()
         {
@@ -37,8 +42,51 @@ namespace SnowMeltArcade.ProjectKitchen.UI
             this.SetupWorkstations(workstationSlotTemplate, workstationTemplate);
             
             this.SetupAvailableWorkstations(workstationSlotTemplate, workstationTemplate);
+
+            this.SetupGridWorkstations(workstationSlotTemplate, workstationTemplate);
         }
 
+        private void SetupGridWorkstations(VisualTreeAsset workstationSlotTemplate, VisualTreeAsset workstationTemplate)
+        {
+            var workstationGrid = this.UIDocument.rootVisualElement.Q<VisualElement>("workstationGrid");
+            if (workstationGrid is null)
+            {
+                Debug.LogError("Failed to find element `workstationGrid`.");
+                return;
+            }
+            
+            workstationGrid.Clear();
+
+            for (var row = 0; row < 5; ++row)
+            {
+                // To view the workstation slots as a grid, we need to create the rows
+                // manually. The rows are styled to display horizontally. The scroll
+                // view itself is styled to display vertically.
+                var horizontalContainer = new VisualElement();
+                horizontalContainer.style.flexDirection = FlexDirection.Row;
+                workstationGrid.Add(horizontalContainer);
+                
+                for (var column = 0; column < 5; ++column)
+                {
+                    var slot = workstationSlotTemplate.Instantiate();
+                
+                    slot.RegisterCallback<ClickEvent>(e =>
+                    {
+                        var s = e.target as VisualElement;
+                        if (s is null)
+                        {
+                            Debug.LogError("Failed to get slot.");
+                            return;
+                        }
+                    
+                        this.PlaceSelectedWorkstation(s);
+                    });
+
+                    horizontalContainer.Add(slot);
+                }
+            }
+        }
+        
         private void SetupWorkstations(VisualTreeAsset workstationSlotTemplate, VisualTreeAsset workstationTemplate)
         {
             var requiredWorkstations = this.UIDocument.rootVisualElement.Q<VisualElement>("requiredWorkstations");
@@ -76,9 +124,50 @@ namespace SnowMeltArcade.ProjectKitchen.UI
                 var slot = workstationSlotTemplate.Instantiate();
                 var workstation = workstationTemplate.Instantiate();
                 
+                workstation.RegisterCallback<ClickEvent>(e =>
+                {
+                    var w = e.target as VisualElement;
+                    if (w is null)
+                    {
+                        Debug.LogError("Failed to get workstation.");
+                        return;
+                    }
+                    
+                    this.SelectAvailableWorkstation(w);
+                });
+                
                 slot.Add(workstation);
                 availableWorkstations.Add(slot);
             }
+        }
+
+        private void SelectAvailableWorkstation(VisualElement workstation)
+        {
+            if (this.SelectedWorkstation is not null)
+            {
+                this.SelectedWorkstation.style.backgroundColor = new StyleColor(Color.green);
+            }
+
+            this.SelectedWorkstation = workstation;
+            this.SelectedWorkstation.style.backgroundColor = new StyleColor(Color.red);
+        }
+
+        private void UnselectWorkstation(VisualElement workstation)
+        {
+            workstation.style.backgroundColor = new StyleColor(Color.green);
+        }
+
+        private void PlaceSelectedWorkstation(VisualElement slot)
+        {
+            if (this.SelectedWorkstation is null)
+            {
+                return;
+            }
+
+            slot.Add(this.SelectedWorkstation);
+
+            this.UnselectWorkstation(this.SelectedWorkstation);
+            this.SelectedWorkstation = null;
         }
     }
 }
