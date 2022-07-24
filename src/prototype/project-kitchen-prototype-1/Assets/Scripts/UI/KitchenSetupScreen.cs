@@ -15,6 +15,8 @@ namespace SnowMeltArcade.ProjectKitchen.UI
     }
     
     internal record WorkstationData(string Name, WorkstationType Type);
+
+    internal record WorkstationSlotData(bool HasWorkstation);
     
     public class KitchenSetupScreen : MonoBehaviour
     {
@@ -79,6 +81,17 @@ namespace SnowMeltArcade.ProjectKitchen.UI
                 for (var column = 0; column < 5; ++column)
                 {
                     var slot = workstationSlotTemplate.Instantiate();
+
+                    // we want to store the user data in the actual element that will be clicked,
+                    // not the parent template container
+                    var slotVisualElement = slot.Q<VisualElement>("slot");
+                    if (slotVisualElement is null)
+                    {
+                        Debug.LogError("Failed to find element `slot`.");
+                        return;
+                    }
+                    
+                    slotVisualElement.userData = new WorkstationSlotData(false);
                 
                     slot.RegisterCallback<ClickEvent>(e =>
                     {
@@ -88,7 +101,7 @@ namespace SnowMeltArcade.ProjectKitchen.UI
                             Debug.LogError("Failed to get slot.");
                             return;
                         }
-                    
+
                         this.PlaceSelectedWorkstation(s);
                     });
 
@@ -179,11 +192,26 @@ namespace SnowMeltArcade.ProjectKitchen.UI
                 return;
             }
 
+            WorkstationSlotData data = slot.userData as WorkstationSlotData;
+            if (data is null)
+            {
+                Debug.LogError("Failed to get workstation slot data.");
+                return;
+            }
+            
+            // we can only add one workstation per slot
+            if (data.HasWorkstation)
+            {
+                return;
+            }
+
             // it looks like this method *replaces* the parent of the child,
             // so we do not need to manually remove this visual element from
             // its current parent
             slot.Add(this.SelectedWorkstation);
 
+            slot.userData = data with { HasWorkstation = true };
+            
             this.UnselectWorkstation(this.SelectedWorkstation);
             this.SelectedWorkstation = null;
         }
