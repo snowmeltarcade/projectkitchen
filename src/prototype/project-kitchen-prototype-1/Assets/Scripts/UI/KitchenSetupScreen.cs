@@ -102,6 +102,13 @@ namespace SnowMeltArcade.ProjectKitchen.UI
                             return;
                         }
 
+                        // perhaps the user is clicking on a workstation that has already
+                        // been placed
+                        if (s.name != "slot")
+                        {
+                            return;
+                        }
+
                         this.PlaceSelectedWorkstation(s);
                     });
 
