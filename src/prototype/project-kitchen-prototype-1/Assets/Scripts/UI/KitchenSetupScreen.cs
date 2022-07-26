@@ -19,7 +19,11 @@ namespace SnowMeltArcade.ProjectKitchen.UI
 
     internal record WorkstationSlotData(uint X, uint Y);
 
-    internal record GridData(VisualElement Slot, bool HasWorkstation, uint X, uint Y);
+    internal record GridData(VisualElement Slot,
+        bool HasWorkstation,
+        bool IsAvailable,
+        uint X,
+        uint Y);
     
     public class KitchenSetupScreen : MonoBehaviour
     {
@@ -43,7 +47,7 @@ namespace SnowMeltArcade.ProjectKitchen.UI
 
                 for (var x = 0u; x < this.GridWidth; ++x)
                 {
-                    this.PlacedWorkstations[y][x] = new(null, false, x, y);
+                    this.PlacedWorkstations[y][x] = new(null, false, false, x, y);
                 }
             }
             
@@ -231,28 +235,34 @@ namespace SnowMeltArcade.ProjectKitchen.UI
         {
             if (slot.X > 0)
             {
-                this.HighlightSlot(this.PlacedWorkstations[slot.Y][slot.X - 1]);
+                this.HighlightSlot(slot.X - 1, slot.Y);
             }
             
             if (slot.X < this.GridWidth - 1)
             {
-                this.HighlightSlot(this.PlacedWorkstations[slot.Y][slot.X + 1]);
+                this.HighlightSlot(slot.X + 1, slot.Y);
             }
             
             if (slot.Y > 0)
             {
-                this.HighlightSlot(this.PlacedWorkstations[slot.Y - 1][slot.X]);
+                this.HighlightSlot(slot.X, slot.Y - 1);
             }
             
             if (slot.Y < this.GridHeight - 1)
             {
-                this.HighlightSlot(this.PlacedWorkstations[slot.Y + 1][slot.X]);
+                this.HighlightSlot(slot.X, slot.Y + 1);
             }
         }
 
-        private void HighlightSlot(GridData gridData)
+        private void HighlightSlot(uint x, uint y)
         {
+            var gridData = this.PlacedWorkstations[y][x];
             gridData.Slot.style.backgroundColor = new StyleColor(Color.yellow);
+
+            this.PlacedWorkstations[y][x] = gridData with
+            {
+                IsAvailable = true,
+            };
         }
 
         private void UnselectWorkstation(VisualElement workstation)
@@ -269,6 +279,11 @@ namespace SnowMeltArcade.ProjectKitchen.UI
                 for (var x = 0; x < this.GridWidth; ++x)
                 {
                     this.PlacedWorkstations[y][x].Slot.style.backgroundColor = new StyleColor(Color.grey);
+
+                    this.PlacedWorkstations[y][x] = this.PlacedWorkstations[y][x] with
+                    {
+                        IsAvailable = false,
+                    };
                 }
             }
         }
@@ -286,10 +301,22 @@ namespace SnowMeltArcade.ProjectKitchen.UI
                 Debug.LogError("Failed to get workstation slot data.");
                 return;
             }
+
+            var slotData = this.PlacedWorkstations[data.Y][data.X];
             
             // we can only add one workstation per slot
-            var hasWorkstation = this.PlacedWorkstations[data.Y][data.X].HasWorkstation;
-            if (hasWorkstation)
+            if (slotData.HasWorkstation)
+            {
+                return;
+            }
+            
+            // we can only add a workstation in an available slot or if there are no
+            // workstations placed
+            var hasAnyWorkstations = from row in this.PlacedWorkstations
+                from s in row
+                select s.HasWorkstation;
+
+            if (!slotData.IsAvailable && hasAnyWorkstations.Contains(true))
             {
                 return;
             }
@@ -299,7 +326,7 @@ namespace SnowMeltArcade.ProjectKitchen.UI
             // its current parent
             slot.Add(this.SelectedWorkstation);
 
-            this.PlacedWorkstations[data.Y][data.X] = this.PlacedWorkstations[data.Y][data.X] with
+            this.PlacedWorkstations[data.Y][data.X] = slotData with
             {
                 HasWorkstation = true,
             };
