@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using JetBrains.Annotations;
 using SnowMeltArcade.ProjectKitchen.Scenes.KitchenSetup;
 using UnityEngine;
@@ -16,18 +17,36 @@ namespace SnowMeltArcade.ProjectKitchen.UI
     
     internal record WorkstationData(string Name, WorkstationType Type);
 
-    internal record WorkstationSlotData(bool HasWorkstation);
+    internal record WorkstationSlotData(uint X, uint Y);
+
+    internal record GridData(VisualElement Slot, bool HasWorkstation, uint X, uint Y);
     
     public class KitchenSetupScreen : MonoBehaviour
     {
         public UIController UIController;
         public UIDocument UIDocument;
 
+        public int GridWidth = 5;
+        public int GridHeight = 5;
+
+        private GridData[][] PlacedWorkstations; 
+        
         [CanBeNull]
         private VisualElement SelectedWorkstation { get; set; }
 
         private void OnEnable()
         {
+            this.PlacedWorkstations = new GridData[this.GridHeight][];
+            for (var y = 0u; y < this.GridHeight; ++y)
+            {
+                this.PlacedWorkstations[y] = new GridData[this.GridWidth];
+
+                for (var x = 0u; x < this.GridWidth; ++x)
+                {
+                    this.PlacedWorkstations[y][x] = new(null, false, x, y);
+                }
+            }
+            
             var buttonDone = this.UIDocument.rootVisualElement.Q<Button>("buttonDone");
             if (buttonDone is null)
             {
@@ -69,7 +88,7 @@ namespace SnowMeltArcade.ProjectKitchen.UI
             
             workstationGrid.Clear();
 
-            for (var row = 0; row < 5; ++row)
+            for (var row = 0u; row < this.GridHeight; ++row)
             {
                 // To view the workstation slots as a grid, we need to create the rows
                 // manually. The rows are styled to display horizontally. The scroll
@@ -78,9 +97,15 @@ namespace SnowMeltArcade.ProjectKitchen.UI
                 horizontalContainer.style.flexDirection = FlexDirection.Row;
                 workstationGrid.Add(horizontalContainer);
                 
-                for (var column = 0; column < 5; ++column)
+                for (var column = 0u; column < this.GridWidth; ++column)
                 {
                     var slot = workstationSlotTemplate.Instantiate();
+                    slot.style.backgroundColor = new StyleColor(Color.gray);
+
+                    this.PlacedWorkstations[row][column] = this.PlacedWorkstations[row][column] with
+                    {
+                        Slot = slot,
+                    };
 
                     // we want to store the user data in the actual element that will be clicked,
                     // not the parent template container
@@ -91,7 +116,7 @@ namespace SnowMeltArcade.ProjectKitchen.UI
                         return;
                     }
                     
-                    slotVisualElement.userData = new WorkstationSlotData(false);
+                    slotVisualElement.userData = new WorkstationSlotData(column, row);
                 
                     slot.RegisterCallback<ClickEvent>(e =>
                     {
@@ -185,11 +210,67 @@ namespace SnowMeltArcade.ProjectKitchen.UI
 
             this.SelectedWorkstation = workstation;
             this.SelectedWorkstation.style.backgroundColor = new StyleColor(Color.red);
+
+            this.HighlightAvailableWorkstationSlots();
+        }
+
+        private void HighlightAvailableWorkstationSlots()
+        {
+            var takenSlots = from row in this.PlacedWorkstations
+                from slot in row
+                where slot.HasWorkstation
+                select slot;
+
+            foreach (var slot in takenSlots)
+            {
+                this.HighlightAreaAroundSlot(slot);
+            }
+        }
+
+        private void HighlightAreaAroundSlot(GridData slot)
+        {
+            if (slot.X > 0)
+            {
+                this.HighlightSlot(this.PlacedWorkstations[slot.Y][slot.X - 1]);
+            }
+            
+            if (slot.X < this.GridWidth - 1)
+            {
+                this.HighlightSlot(this.PlacedWorkstations[slot.Y][slot.X + 1]);
+            }
+            
+            if (slot.Y > 0)
+            {
+                this.HighlightSlot(this.PlacedWorkstations[slot.Y - 1][slot.X]);
+            }
+            
+            if (slot.Y < this.GridHeight - 1)
+            {
+                this.HighlightSlot(this.PlacedWorkstations[slot.Y + 1][slot.X]);
+            }
+        }
+
+        private void HighlightSlot(GridData gridData)
+        {
+            gridData.Slot.style.backgroundColor = new StyleColor(Color.yellow);
         }
 
         private void UnselectWorkstation(VisualElement workstation)
         {
             workstation.style.backgroundColor = new StyleColor(Color.green);
+
+            this.UnhighlightAvailableWorkstationSlots();
+        }
+
+        private void UnhighlightAvailableWorkstationSlots()
+        {
+            for (var y = 0; y < this.GridHeight; ++y)
+            {
+                for (var x = 0; x < this.GridWidth; ++x)
+                {
+                    this.PlacedWorkstations[y][x].Slot.style.backgroundColor = new StyleColor(Color.grey);
+                }
+            }
         }
 
         private void PlaceSelectedWorkstation(VisualElement slot)
@@ -207,7 +288,8 @@ namespace SnowMeltArcade.ProjectKitchen.UI
             }
             
             // we can only add one workstation per slot
-            if (data.HasWorkstation)
+            var hasWorkstation = this.PlacedWorkstations[data.Y][data.X].HasWorkstation;
+            if (hasWorkstation)
             {
                 return;
             }
@@ -217,7 +299,10 @@ namespace SnowMeltArcade.ProjectKitchen.UI
             // its current parent
             slot.Add(this.SelectedWorkstation);
 
-            slot.userData = data with { HasWorkstation = true };
+            this.PlacedWorkstations[data.Y][data.X] = this.PlacedWorkstations[data.Y][data.X] with
+            {
+                HasWorkstation = true,
+            };
             
             this.UnselectWorkstation(this.SelectedWorkstation);
             this.SelectedWorkstation = null;
