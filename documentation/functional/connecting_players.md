@@ -22,6 +22,6 @@ The following optional information can also be set by a client:
 
 Any optional information not set by a client will be randomly selected by the server session.
 
-If a client gets disconnected due to network connection issues, the client will try to reconnect to the server session.
+If a client gets disconnected due to network connection issues, the client will try to reconnect to the server session and will join the kitchen lobby.
 
 A client can disconnect from a server session at any time.
