@@ -110,6 +110,7 @@ All possible plate types are as follows:
 | -- |
 | Paper Plate |
 | Ceramic Plate |
+| Plater |
 
 ## Diner
 
@@ -151,6 +152,7 @@ All possible plate types are as follows:
 | -- |
 | Paper Plate |
 | Ceramic Plate |
+| Plater |
 | Slate |
 
 ## Restaurant
@@ -196,5 +198,6 @@ All possible plate types are as follows:
 | -- |
 | Paper Plate |
 | Ceramic Plate |
+| Plater |
 | Slate |
 | Jewel Encrusted Plate |
