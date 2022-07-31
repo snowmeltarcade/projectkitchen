@@ -15,7 +15,9 @@ Players can select which workstations a kitchen will have from a provided select
 
 A simple restaurant that will only have simple customer orders.
 
-The grid size of this restaurant will be `5x5`.
+_Grid Size_: `5x5`.
+
+_Plate Restock time_: `N/A` (Paper plates do not need restocking)
 
 All possible ingredients that can be ordered by customers are as follows:
 
@@ -43,7 +45,9 @@ All possible plate types are as follows:
 
 A basic restaurant with many customers that will order food that requires at most 2 preparation steps.
 
-The grid size of this restaurant will be `7x7`.
+_Grid Size_: `7x7`.
+
+_Plate Restock time_: `N/A` (Paper plates do not need restocking)
 
 All possible ingredients that can be ordered by customers are as follows:
 
@@ -77,7 +81,9 @@ All possible plate types are as follows:
 
 A fully setup restaurant with many customers that will order food that requires at most 3 preparation steps.
 
-The grid size of this restaurant will be `8x8`.
+_Grid Size_: `8x8`.
+
+_Plate Restock time_: `3-5 seconds`.
 
 All possible ingredients that can be ordered by customers are as follows:
 
@@ -116,7 +122,9 @@ All possible plate types are as follows:
 
 A fully setup, sit-down, restaurant with many customers that will order food that requires at most 4 preparation steps.
 
-The grid size of this restaurant will be `10x10`.
+_Grid Size_: `10x10`.
+
+_Plate Restock time_: `5-7 seconds`.
 
 All possible ingredients that can be ordered by customers are as follows:
 
@@ -159,7 +167,9 @@ All possible plate types are as follows:
 
 A fine dining restaurant with many customers, who have high standards, that will order food that requires at most 5 preparation steps.
 
-The grid size of this restaurant will be `12x12`.
+_Grid Size_: `12x12`.
+
+_Plate Restock time_: `7-10 seconds`.
 
 All possible ingredients that can be ordered by customers are as follows:
 
