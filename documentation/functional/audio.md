@@ -16,4 +16,4 @@ Game play music should match the style of the kitchen they are playing in, whils
 
 ## Sound Effects
 
-Short, simple and cute sound effects should be used. These should be consistent and clearly identify the associated function, such as selecting a menu option, chopping a vegetable or gaining points. Each sound effect should be distinct enough for the player to recognize a function by its sound, but all have a common theme so the player knows they all belong to the this game.
+Short, simple and cute sound effects should be used. These should be consistent and clearly identify the associated function, such as selecting a menu option, chopping a vegetable or getting a star rating from a customer. Each sound effect should be distinct enough for the player to recognize a function by its sound, but all have a common theme so the player knows they all belong to the this game.

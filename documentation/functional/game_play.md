@@ -31,7 +31,7 @@ Game sessions are easy to setup and simple to play. Game sessions should not be 
 
 ## Target Audience
 
-* A group with a minimum of 2 players and a maximum of 16 players
+* A group with a minimum of 1 player and a maximum of 16 players
 * Groups of people over 5 years of age
 * Low technical skill required
 * No real life cooking experience required
@@ -60,7 +60,7 @@ flowchart TB;
 
 Each [kitchen](kitchens.md) has a set layout with a slots for workstations to be placed. Before a level can be played, the lead player (the server) must fill these slots with the workstations they have access to. Every kitchen has a set of required workstations.
 
-After the kitchen has been layed out, each player must then select the workstation they will start at. This will be done using the workstation selection screen (also called the kitchen lobby screen).
+After the kitchen has been layed out, each player must then select the workstation they will start at. This will be done using the kitchen lobby screen.
 
 ## Cooking Levels
 
@@ -106,11 +106,11 @@ Each time a plate of food is served to a customer, that customer gives the resta
 
 ### Moving Between Workstations
 
-Players can move between workstations during game play. They will do this by using the same workstation selection screen used when they chose their initial workstations.
+Players can move between workstations during game play. They will do this by using the kitchen lobby screen. Players can only move to a workstation that has no player already there.
 
 ### Player Disconnections
 
-If a player gets disconnected from game play (or the app stops running, due to being minimized/put into the background on a mobile device etc...), that player automatically gets removed from active game play. When that player reconnects (or the app starts running again), they will start out at the workstation selection screen.
+If a player gets disconnected from game play (or the app stops running, due to being minimized/put into the background on a mobile device etc...), that player automatically gets removed from active game play. When that player reconnects (or the app starts running again), they will start out at the kitchen lobby screen.
 
 ## Ingredients
 
@@ -118,7 +118,7 @@ Ingredients need to be passed and prepared so they can be plated according to cu
 
 ### Passing Ingredients
 
-The player has to pass ingredients either up, down, left or right to a different workstations. As workstations are positioned in a grid, the player must keep in mind where a workstation is in relation to their current workstation. Workstations are positions directly next to each other, so there are no gaps between workstations.
+The player has to pass ingredients either up, down, left or right to a different workstations. As workstations are positioned in a grid, the player must keep in mind where a workstation is in relation to their current workstation. Workstations are positioned directly next to each other, so there are no gaps between workstations.
 
 Not all sides of a workstation will have an adjacent workstation. If there is no workstation on the side an ingredient is passed, that ingredient falls to the floor and is lost.
 
@@ -134,7 +134,9 @@ This is an example of how workstations may be positioned:
 
 Prepared ingredients should be put on a [plate](plates.md) so they can be given to a customer. A customer will specify what type of plate they expect their food to be put on.
 
-The number of certain types of plates is limited. When this type of plate is given to a customer, will be returned to a wash area after a set period of time. Some plates can also be dropped and smashed, thus rendering them unusable.
+The number of certain types of plates is limited. When this type of plate is given to a customer, it will be returned to a wash area after a set period of time. Some plates can also be dropped and smashed, thus rendering them unusable.
+
+Food can only be put on plates in the plating area.
 
 ## Achievements
 

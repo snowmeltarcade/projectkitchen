@@ -24,7 +24,7 @@ All workstations take up one cell in the kitchen grid and have the same size.
 
 Items (ingredients, plates etc...) all have different sizes and cannot overlap. This means that the number of items a player stores on a workstation is limited.
 
-If a player passes an item to a workstation that has no space, this item is spoiled by falling on the floor. Players are made aware that a workstation has no space before they commit to passing to it, although there is no game mechanic to stop them from passing the item if they choose to do so. If they choose to still pass an ingredient, it falls to the floor and is spoiled. If a plate falls to the floor, it smashes and cannot be restocked during that level.
+If a player passes an item to a workstation that has no space, this item is spoiled by falling on the floor. Players are made aware that a workstation has no space before they commit to passing to it, although there is no game mechanic to stop them from passing the item if they choose to do so. If they choose to still pass an ingredient, it falls to the floor and is spoiled. If a plate falls to the floor, it smashes (if the plate type has that function) and cannot be restocked during that level.
 
 ## Types
 
@@ -40,7 +40,7 @@ Types can have subtypes. Each subtype requires a specific player [action](food_p
 
 Supplies a variety of items. These items could be ingredients, plates or something else.
 
-Getting items from a supply workstation is not rate limited by time, but item types are limited by capacity. Once items run out, a period of time is required for those items to be restocked. The restocking occurs automatically during a level, and instantly after a level is finished.
+Getting items from a supply workstation is not rate limited by time, but item types are limited by capacity. Once items run out, a period of time is required for those items to be restocked. The restocking occurs automatically during a level. At the beginning of each level, all item stocks are fully replenished.
 
 As supply workstations are leveled up, their capacity increases and the restocking time decreases. Different items have different capacities and restocking times.
 
@@ -50,7 +50,7 @@ Required action: `tap`.
 
 #### Pantry
 
-Provides ingredients for players to use. Specific ingredient choices are provided based upon the menus to be created.
+Provides ingredients for players to use.
 
 **Purchase Cost**: Free - given to the player by default
 
@@ -58,7 +58,9 @@ Provides ingredients for players to use. Specific ingredient choices are provide
 
 _Cost of Upgrade_: N/A
 
-_Stocked Ingredients_: Bread; Beef;
+_Stocked Ingredients_: Bread; Beef; Tomato;
+
+_Item Restock Time_: 10s
 
 **Level 2**
 
@@ -66,11 +68,15 @@ _Cost of Upgrade_: ??
 
 _Stocked Ingredients_: ??
 
+_Item Restock Time_: ??
+
 **Level 3**
 
 _Cost of Upgrade_: ??
 
 _Stocked Ingredients_: ??
+
+_Item Restock Time_: ??
 
 **Level 4**
 
@@ -78,11 +84,15 @@ _Cost of Upgrade_: ??
 
 _Stocked Ingredients_: ??
 
+_Item Restock Time_: ??
+
 **Level 5**
 
 _Cost of Upgrade_: ??
 
 _Stocked Ingredients_: ??
+
+_Item Restock Time_: ??
 
 #### Plate Cupboard
 
@@ -96,11 +106,15 @@ _Cost of Upgrade_: N/A
 
 _Stocked Plates_: Paper;
 
+_Item Restock Time_: N/A
+
 **Level 2**
 
 _Cost of Upgrade_: ??
 
 _Stocked Plates_: Ceramic;
+
+_Item Restock Time_: 10s
 
 **Level 3**
 
@@ -108,11 +122,15 @@ _Cost of Upgrade_: ??
 
 _Stocked Plates_: Slate;
 
+_Item Restock Time_: 8s
+
 **Level 4**
 
 _Cost of Upgrade_: ??
 
 _Stocked Plates_: Player;
+
+_Item Restock Time_: 6s
 
 **Level 5**
 
@@ -120,13 +138,15 @@ _Cost of Upgrade_: ??
 
 _Stocked Plates_: Jewel Encrusted;
 
+_Item Restock Time_: 4s
+
 ### Mutation
 
 Allows items to be changed from one type to another. This is a process that requires user action and/or a period of time. The specific number of actions and/or time required depends on the item being processed.
 
-As these workstations level up, their ability to produce different forms of an ingredient becomes available. The player must perform the required action a certain number of times or for a certain period of time to product an available ingredient form.
+As these workstations level up, their ability to produce different levels of an ingredient becomes available. The player must perform the required action a certain number of times or for a certain period of time to produce an available ingredient at a specific level.
 
-If the player performs too many of these actions or takes too long (for instance, slices an ingredient too many times), the actions cannot be reversed. Either the player uses the resulting ingredient form or tries again with a new ingredient.
+If the player performs too many of these actions or takes too long (thus producing an ingredient level high that what is needed), the actions cannot be reversed. Either the player uses the resulting ingredient level or tries again with a new ingredient.
 
 A help label on these workstations will remind the player of what actions are required. This label can be tapped/clicked to be viewed by the player.
 
@@ -200,7 +220,7 @@ Required action: `tap`.
 
 #### Plating Station
 
-Ingredients are placed on a plate. What ingredients are allowed to be plated depends on what menu orders are active.
+Ingredients are placed on a plate. It is up to the player to ensure the plated ingredients and their levels match the customer orders.
 
 A completed plate of food must be passed to a serving station.
 
@@ -208,4 +228,4 @@ A completed plate of food must be passed to a serving station.
 
 Completed plates of food are taken here and are then delivered to customers. All order slips can be seen on this station. The player must place the completed plate of food on an order slip. As soon as the plate is placed on a slip, it is delivered. If the plate of food does not match the slip, the customer will give a 0-star rating.
 
-Once a plate of food is delivered and that plate is reusable, that plate is automatically placed in the plate cupboard's sink after a short period of time. This period of time is defined by type of restaurant. If there is more than one plating cupboard workstation, the workstation is randomly chosen.
+Once a plate of food is delivered and if that plate is reusable, the plate is automatically placed in the plate cupboard's sink after a short period of time. This period of time is defined by type of restaurant. If there is more than one plating cupboard workstation, the workstation is randomly chosen.
