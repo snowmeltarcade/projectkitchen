@@ -1,49 +1,213 @@
 # Kitchens
 
-Kitchens differ in the types of workstations they would have. Each player would be designated a different workstation. If there are insufficient players, then individual players will have to move from workstation to workstation.
+Kitchens differ in the types of orders customers will make. This will require using different types of workstations to prepare ingredients to satisfy those orders.
 
 Players can select which workstations a kitchen will have from a provided selection. Each kitchen must have at least three types of [workstation](workstations.md): an ingredient store, a prep station and a serving area.
 
 - [Kitchens](#kitchens)
-  - [Farmers market](#farmers-market)
-  - [Festival food](#festival-food)
-  - [Fast food](#fast-food)
+  - [Farmers Market](#farmers-market)
+  - [Festival Food](#festival-food)
+  - [Fast Food](#fast-food)
   - [Diner](#diner)
   - [Restaurant](#restaurant)
 
-## Farmers market
+## Farmers Market
 
-This is defined by having products that need to, at most, cut, and then packaged. A package/plate to be delivered to a customer could have several different types of ingredients, but they would be very simple to prepare. There would be 2 different workstations:
+A simple restaurant that will only have simple customer orders.
 
- 1. Prep (cutting)
- 2. Serving (delivering to customers)
+_Grid Size_: `5x5`.
 
-## Festival food
+_Plate Restock time_: `N/A` (Paper plates do not need restocking)
 
-This is defined by having a few simple recipes that never vary, but which may require frying, boiling, grilling, or other steps, in addition to potentially cutting. Thus, ingredients may require 2 preparation steps, e.g. cutting potatoes and then frying them. It would be expected that as the kitchen becomes more complex it may have both a fry workstation and a grill workstation, and higher levels of difficulty would include boiling and more. Still, each ingredient will be capped at two preparation steps and the recipes will not vary, i.e. there is only one type of burger or grilled sandwich made by the restaurant. This menu simplicity promotes allowing the player to become accustomed to how to make a recipe without worrying about variances.
+All possible ingredients that can be ordered by customers are as follows:
 
-In addition to the above workstations, this includes:
+| Name | Level |
+| -- | -- |
+| Bread | 1 |
+| Beef | 1 |
+| Tomato | 1 |
+| ... | ... |
 
- 1. Hot workstations (frying, boiling, grilling, steaming, etc...)
+All possible combined ingredients are as follows:
 
-## Fast food
+| Name |
+| -- |
+| Basic Burger |
+| ... |
 
-This is defined by having menu items that allow for simple variances. Like [festival food](kitchens.md#festival-food), each item will only need up to 2 preparation steps. The difference here is that a recipe may have customer preference differences. A customer may or may not want pickles on their burger. This difference requires a chef to learn to better read an order. The complexity comes from the fact that the customer may or may not eat the food. If they don't eat the food, you won't get credit for making it. If they eat it, they will give a poor rating to the restaurant for serving the wrong thing.
+All possible plate types are as follows:
 
-In addition to the above workstations, this includes:
+| Name |
+| -- |
+| Paper Plate |
 
- 4. Pantry (there aren't unlimited ingredients)
+## Festival Food
+
+A basic restaurant with many customers that will order food that requires at most 2 preparation steps.
+
+_Grid Size_: `7x7`.
+
+_Plate Restock time_: `N/A` (Paper plates do not need restocking)
+
+All possible ingredients that can be ordered by customers are as follows:
+
+| Name | Level |
+| -- | -- |
+| Bread | 2 |
+| Beef | 2 |
+| Pork | 2 |
+| Tomato | 2 |
+| Potato | 2 |
+| Pickle | 2 |
+| Cheese | 2 |
+| ... | ... |
+
+All possible combined ingredients are as follows:
+
+| Name |
+| -- |
+| Basic Burger |
+| Cheese Burger |
+| Hot Dog |
+| ... |
+
+All possible plate types are as follows:
+
+| Name |
+| -- |
+| Paper Plate |
+
+## Fast Food
+
+A fully setup restaurant with many customers that will order food that requires at most 3 preparation steps.
+
+_Grid Size_: `8x8`.
+
+_Plate Restock time_: `3-5 seconds`.
+
+All possible ingredients that can be ordered by customers are as follows:
+
+| Name | Level |
+| -- | -- |
+| Bread | 3 |
+| Beef | 3 |
+| Pork | 3 |
+| Tomato | 3 |
+| Potato | 3 |
+| Pickle | 3 |
+| Chicken | 3 |
+| Cheese | 3 |
+| ... | ... |
+
+All possible combined ingredients are as follows:
+
+| Name |
+| -- |
+| Cheese Burger |
+| Hot Dog |
+| Chick Burger |
+| Hash Brown |
+| Children's Chicken Meal |
+| ... |
+
+All possible plate types are as follows:
+
+| Name |
+| -- |
+| Paper Plate |
+| Ceramic Plate |
+| Plater |
 
 ## Diner
 
-This is defined by there being multiple plates that need to be served together. Like [fast food](kitchens.md#fast-food), there can be variance in the menu items, but a plate may require a burger with pickles and a side of fries or, for example a burger without pickles and a side of mashed potatoes.
+A fully setup, sit-down, restaurant with many customers that will order food that requires at most 4 preparation steps.
 
-In addition to the above workstations, this includes:
+_Grid Size_: `10x10`.
 
- 5. Dish workstation
+_Plate Restock time_: `5-7 seconds`.
+
+All possible ingredients that can be ordered by customers are as follows:
+
+| Name | Level |
+| -- | -- |
+| Bread | 4 |
+| Beef | 4 |
+| Pork | 4 |
+| Tomato | 4 |
+| Potato | 4 |
+| Pickle | 4 |
+| Chicken | 4 |
+| Cheese | 4 |
+| Sweet Potato | 4 |
+| ... | ... |
+
+All possible combined ingredients are as follows:
+
+| Name |
+| -- |
+| Cheese Burger |
+| Hot Dog |
+| Chick Burger |
+| Hash Brown |
+| Children's Chicken Meal |
+| Sweet Potato Fries |
+| Steak & Fries |
+| ... |
+
+All possible plate types are as follows:
+
+| Name |
+| -- |
+| Paper Plate |
+| Ceramic Plate |
+| Plater |
+| Slate |
 
 ## Restaurant
 
-This is defined by fine-grained control of the hot workstations. Using the hot workstation will no longer work like a timed appliance, but it will require a timed interaction from the player to keep the heat active for a certain amount of time. The time required will vary based on customer preference. Some like their meat cooked "rare" others like it cooked "well done". Additionally, the amount of heat can vary. Some items my also require continuous interaction, like continuous stirring while cooking.
+A fine dining restaurant with many customers, who have high standards, that will order food that requires at most 5 preparation steps.
 
-There are no additional workstations for this type of kitchen.
+_Grid Size_: `12x12`.
+
+_Plate Restock time_: `7-10 seconds`.
+
+All possible ingredients that can be ordered by customers are as follows:
+
+| Name | Level |
+| -- | -- |
+| Bread | 5 |
+| Beef | 5 |
+| Pork | 5 |
+| Tomato | 5 |
+| Potato | 5 |
+| Pickle | 5 |
+| Chicken | 5 |
+| Cheese | 5 |
+| Sweet Potato | 5 |
+| Salmon | 5 |
+| Rice | 5 |
+| ... | ... |
+
+All possible combined ingredients are as follows:
+
+| Name |
+| -- |
+| Cheese Burger |
+| Hot Dog |
+| Chick Burger |
+| Hash Brown |
+| Children's Chicken Meal |
+| Sweet Potato Fries |
+| Steak & Fries |
+| Salmon Sushi |
+| ... |
+
+All possible plate types are as follows:
+
+| Name |
+| -- |
+| Paper Plate |
+| Ceramic Plate |
+| Plater |
+| Slate |
+| Jewel Encrusted Plate |
