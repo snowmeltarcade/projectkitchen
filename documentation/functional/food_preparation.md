@@ -21,7 +21,7 @@ Ingredients and kitchen items must be drag and drop-able on the player's kitchen
 
 Once an ingredient has been placed on a kitchen item, it can only be removed when the item's actions have been fully performed.
 
-A kitchen item can only be moved when an ingredient has been placed on it. If an ingredient is on the kitchen item, that action is counted as a process action.
+A kitchen item can only be moved when an ingredient has not been placed on it. If an ingredient is on the kitchen item, that action is counted as a process action.
 
 | Input Device | Description of Input |
 | -- | -- |
